@@ -1,0 +1,2757 @@
+
+;; Function get_buddy (get_buddy, funcdef_no=0, decl_uid=3107, cgraph_uid=0)
+
+
+
+get_buddy
+
+Dataflow summary:
+;;  invalidated by call 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 8 [st] 9 [st(1)] 10 [st(2)] 11 [st(3)] 12 [st(4)] 13 [st(5)] 14 [st(6)] 15 [st(7)] 17 [flags] 18 [fpsr] 19 [fpcr] 21 [xmm0] 22 [xmm1] 23 [xmm2] 24 [xmm3] 25 [xmm4] 26 [xmm5] 27 [xmm6] 28 [xmm7] 29 [mm0] 30 [mm1] 31 [mm2] 32 [mm3] 33 [mm4] 34 [mm5] 35 [mm6] 36 [mm7] 37 [r8] 38 [r9] 39 [r10] 40 [r11] 45 [xmm8] 46 [xmm9] 47 [xmm10] 48 [xmm11] 49 [xmm12] 50 [xmm13] 51 [xmm14] 52 [xmm15]
+;;  hardware regs used 	 7 [sp]
+;;  regular block artificial uses 	 6 [bp] 7 [sp]
+;;  eh block artificial uses 	 6 [bp] 7 [sp] 16 [argp] 20 [frame]
+;;  entry block defs 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 6 [bp] 7 [sp] 20 [frame] 21 [xmm0] 22 [xmm1] 23 [xmm2] 24 [xmm3] 25 [xmm4] 26 [xmm5] 27 [xmm6] 28 [xmm7] 37 [r8] 38 [r9]
+;;  exit block uses 	 0 [ax] 6 [bp] 7 [sp] 20 [frame]
+;;  regs ever live 	 0[ax] 1[dx] 2[cx] 4[si] 5[di] 6[bp] 17[flags]
+;;  ref usage 	r0={7d,7u} r1={2d,1u} r2={3d,2u} r4={3d,3u} r5={3d,3u} r6={3d,7u} r7={3d,5u} r17={4d} r20={1d,1u} r21={1d} r22={1d} r23={1d} r24={1d} r25={1d} r26={1d} r27={1d} r28={1d} r37={1d} r38={1d} 
+;;    total ref usage 68{39d,29u,0e} in 22{22 regular + 0 call} insns.
+(note 1 0 5 NOTE_INSN_DELETED)
+(note 5 1 37 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn/f 37 5 38 2 (set (mem:DI (pre_dec:DI (reg/f:DI 7 sp)) [0 S8 A8])
+        (reg/f:DI 6 bp)) malloc.c:23 -1
+     (nil))
+(insn/f 38 37 39 2 (set (reg/f:DI 6 bp)
+        (reg/f:DI 7 sp)) malloc.c:23 -1
+     (nil))
+(insn 39 38 40 2 (set (mem/v:BLK (scratch:DI) [0 A8])
+        (unspec:BLK [
+                (mem/v:BLK (scratch:DI) [0 A8])
+            ] UNSPEC_MEMORY_BLOCKAGE)) malloc.c:23 -1
+     (nil))
+(note 40 39 2 2 NOTE_INSN_PROLOGUE_END)
+(insn 2 40 3 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 ptr+0 S8 A64])
+        (reg:DI 5 di [ ptr ])) malloc.c:23 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 5 di [ ptr ])
+        (nil)))
+(insn 3 2 4 2 (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -16 [0xfffffffffffffff0])) [0 kval+0 S8 A64])
+        (reg:DI 4 si [ kval ])) malloc.c:23 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 4 si [ kval ])
+        (nil)))
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+(insn 7 4 8 2 (set (reg/f:DI 1 dx [orig:59 base_addr.0 ] [59])
+        (mem/f/c:DI (symbol_ref:DI ("base_addr") [flags 0x2]  <var_decl 0x7f448319eb48 base_addr>) [0 base_addr+0 S8 A64])) malloc.c:24 87 {*movdi_internal_rex64}
+     (nil))
+(insn 8 7 9 2 (set (reg:DI 2 cx [orig:60 ptr.1 ] [60])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 ptr+0 S8 A64])) malloc.c:24 87 {*movdi_internal_rex64}
+     (nil))
+(insn 9 8 32 2 (set (reg/f:DI 0 ax [orig:61 base_addr.2 ] [61])
+        (mem/f/c:DI (symbol_ref:DI ("base_addr") [flags 0x2]  <var_decl 0x7f448319eb48 base_addr>) [0 base_addr+0 S8 A64])) malloc.c:24 87 {*movdi_internal_rex64}
+     (nil))
+(insn 32 9 11 2 (set (reg:DI 5 di [orig:63 D.3311 ] [63])
+        (reg:DI 2 cx [orig:60 ptr.1 ] [60])) malloc.c:24 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 2 cx [orig:60 ptr.1 ] [60])
+        (nil)))
+(insn 11 32 12 2 (parallel [
+            (set (reg:DI 5 di [orig:63 D.3311 ] [63])
+                (minus:DI (reg:DI 5 di [orig:63 D.3311 ] [63])
+                    (reg:DI 0 ax [orig:62 base_addr.3 ] [62])))
+            (clobber (reg:CC 17 flags))
+        ]) malloc.c:24 310 {*subdi_1}
+     (expr_list:REG_DEAD (reg:DI 0 ax [orig:62 base_addr.3 ] [62])
+        (nil)))
+(insn 12 11 14 2 (set (reg:DI 0 ax [71])
+        (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -16 [0xfffffffffffffff0])) [0 kval+0 S8 A64])) malloc.c:24 87 {*movdi_internal_rex64}
+     (nil))
+(insn 14 12 36 2 (set (reg:SI 4 si [72])
+        (const_int 1 [0x1])) malloc.c:24 89 {*movsi_internal}
+     (nil))
+(insn 36 14 15 2 (set (reg:QI 2 cx [76])
+        (reg:QI 0 ax [orig:64 D.3312 ] [64])) malloc.c:24 91 {*movqi_internal}
+     (expr_list:REG_DEAD (reg:SI 0 ax [orig:64 D.3312 ] [64])
+        (nil)))
+(insn 15 36 35 2 (parallel [
+            (set (reg:SI 4 si [orig:65 D.3312 ] [65])
+                (ashift:SI (reg:SI 4 si [orig:65 D.3312 ] [65])
+                    (reg:QI 2 cx [76])))
+            (clobber (reg:CC 17 flags))
+        ]) malloc.c:24 521 {*ashlsi3_1}
+     (expr_list:REG_DEAD (reg:QI 2 cx [76])
+        (nil)))
+(insn 35 15 16 2 (set (reg:SI 0 ax [orig:65 D.3312 ] [65])
+        (reg:SI 4 si [orig:65 D.3312 ] [65])) malloc.c:24 89 {*movsi_internal}
+     (expr_list:REG_DEAD (reg:SI 4 si [orig:65 D.3312 ] [65])
+        (nil)))
+(insn 16 35 17 2 (set (reg:DI 0 ax [orig:66 D.3311 ] [66])
+        (sign_extend:DI (reg:SI 0 ax [orig:65 D.3312 ] [65]))) malloc.c:24 149 {*extendsidi2_rex64}
+     (expr_list:REG_DEAD (reg:SI 0 ax [orig:65 D.3312 ] [65])
+        (nil)))
+(insn 17 16 19 2 (parallel [
+            (set (reg:DI 0 ax [orig:67 D.3311 ] [67])
+                (xor:DI (reg:DI 0 ax [orig:66 D.3311 ] [66])
+                    (reg:DI 5 di [orig:63 D.3311 ] [63])))
+            (clobber (reg:CC 17 flags))
+        ]) malloc.c:24 424 {*xordi_1}
+     (expr_list:REG_DEAD (reg:DI 0 ax [orig:66 D.3311 ] [66])
+        (expr_list:REG_DEAD (reg:DI 5 di [orig:63 D.3311 ] [63])
+            (nil))))
+(insn 19 17 29 2 (parallel [
+            (set (reg/f:DI 0 ax [orig:69 D.3314 ] [69])
+                (plus:DI (reg:DI 0 ax [orig:68 D.3313 ] [68])
+                    (reg/f:DI 1 dx [orig:59 base_addr.0 ] [59])))
+            (clobber (reg:CC 17 flags))
+        ]) malloc.c:24 274 {*adddi_1}
+     (expr_list:REG_DEAD (reg:DI 0 ax [orig:68 D.3313 ] [68])
+        (expr_list:REG_DEAD (reg/f:DI 1 dx [orig:59 base_addr.0 ] [59])
+            (nil))))
+(insn 29 19 41 2 (use (reg/i:DI 0 ax)) malloc.c:25 -1
+     (nil))
+(note 41 29 42 2 NOTE_INSN_EPILOGUE_BEG)
+(insn 42 41 43 2 (set (mem/v:BLK (scratch:DI) [0 A8])
+        (unspec:BLK [
+                (mem/v:BLK (scratch:DI) [0 A8])
+            ] UNSPEC_MEMORY_BLOCKAGE)) malloc.c:25 -1
+     (nil))
+(insn/f 43 42 44 2 (set (reg/f:DI 6 bp)
+        (mem:DI (post_inc:DI (reg/f:DI 7 sp)) [0 S8 A8])) malloc.c:25 -1
+     (expr_list:REG_CFA_DEF_CFA (plus:DI (reg/f:DI 7 sp)
+            (const_int 8 [0x8]))
+        (nil)))
+(jump_insn 44 43 45 2 (simple_return) malloc.c:25 -1
+     (nil)
+ -> simple_return)
+(barrier 45 44 0)
+
+;; Function split_block (split_block, funcdef_no=1, decl_uid=3110, cgraph_uid=1)
+
+
+
+split_block
+
+Dataflow summary:
+;;  invalidated by call 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 8 [st] 9 [st(1)] 10 [st(2)] 11 [st(3)] 12 [st(4)] 13 [st(5)] 14 [st(6)] 15 [st(7)] 17 [flags] 18 [fpsr] 19 [fpcr] 21 [xmm0] 22 [xmm1] 23 [xmm2] 24 [xmm3] 25 [xmm4] 26 [xmm5] 27 [xmm6] 28 [xmm7] 29 [mm0] 30 [mm1] 31 [mm2] 32 [mm3] 33 [mm4] 34 [mm5] 35 [mm6] 36 [mm7] 37 [r8] 38 [r9] 39 [r10] 40 [r11] 45 [xmm8] 46 [xmm9] 47 [xmm10] 48 [xmm11] 49 [xmm12] 50 [xmm13] 51 [xmm14] 52 [xmm15]
+;;  hardware regs used 	 7 [sp]
+;;  regular block artificial uses 	 6 [bp] 7 [sp]
+;;  eh block artificial uses 	 6 [bp] 7 [sp] 16 [argp] 20 [frame]
+;;  entry block defs 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 6 [bp] 7 [sp] 20 [frame] 21 [xmm0] 22 [xmm1] 23 [xmm2] 24 [xmm3] 25 [xmm4] 26 [xmm5] 27 [xmm6] 28 [xmm7] 37 [r8] 38 [r9]
+;;  exit block uses 	 0 [ax] 6 [bp] 7 [sp] 20 [frame]
+;;  regs ever live 	 0[ax] 1[dx] 2[cx] 5[di] 6[bp] 17[flags]
+;;  ref usage 	r0={19d,21u} r1={14d,13u,1e} r2={2d,1u} r4={1d} r5={1d,1u} r6={3d,26u} r7={3d,5u} r17={5d} r20={1d,1u,1e} r21={1d} r22={1d} r23={1d} r24={1d} r25={1d} r26={1d} r27={1d} r28={1d} r37={1d} r38={1d} 
+;;    total ref usage 129{59d,68u,2e} in 51{51 regular + 0 call} insns.
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 72 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn/f 72 4 73 2 (set (mem:DI (pre_dec:DI (reg/f:DI 7 sp)) [0 S8 A8])
+        (reg/f:DI 6 bp)) malloc.c:28 -1
+     (nil))
+(insn/f 73 72 74 2 (set (reg/f:DI 6 bp)
+        (reg/f:DI 7 sp)) malloc.c:28 -1
+     (nil))
+(insn 74 73 75 2 (set (mem/v:BLK (scratch:DI) [0 A8])
+        (unspec:BLK [
+                (mem/v:BLK (scratch:DI) [0 A8])
+            ] UNSPEC_MEMORY_BLOCKAGE)) malloc.c:28 -1
+     (nil))
+(note 75 74 2 2 NOTE_INSN_PROLOGUE_END)
+(insn 2 75 3 2 (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [0 kval+0 S8 A64])
+        (reg:DI 5 di [ kval ])) malloc.c:28 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 5 di [ kval ])
+        (nil)))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(insn 6 3 7 2 (set (reg:DI 0 ax [67])
+        (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [0 kval+0 S8 A64])) malloc.c:31 87 {*movdi_internal_rex64}
+     (nil))
+(insn 7 6 8 2 (set (reg/f:DI 0 ax [68])
+        (mem/f/j:DI (plus:DI (mult:DI (reg:DI 0 ax [67])
+                    (const_int 8 [0x8]))
+                (symbol_ref:DI ("free_list") [flags 0x2]  <var_decl 0x7f448319eab0 free_list>)) [0 free_list S8 A64])) malloc.c:31 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 0 ax [67])
+        (nil)))
+(insn 8 7 9 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -16 [0xfffffffffffffff0])) [0 child_1+0 S8 A64])
+        (reg/f:DI 0 ax [68])) malloc.c:31 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [68])
+        (nil)))
+(insn 9 8 10 2 (set (reg/f:DI 0 ax [69])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -16 [0xfffffffffffffff0])) [0 child_1+0 S8 A64])) malloc.c:32 87 {*movdi_internal_rex64}
+     (nil))
+(insn 10 9 11 2 (set (reg/f:DI 1 dx [orig:59 D.3315 ] [59])
+        (mem/f/j:DI (plus:DI (reg/f:DI 0 ax [69])
+                (const_int 8 [0x8])) [0 child_1_2->succ+0 S8 A64])) malloc.c:32 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [69])
+        (nil)))
+(insn 11 10 12 2 (set (reg:DI 0 ax [70])
+        (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [0 kval+0 S8 A64])) malloc.c:32 87 {*movdi_internal_rex64}
+     (nil))
+(insn 12 11 13 2 (set (mem/f/j:DI (plus:DI (mult:DI (reg:DI 0 ax [70])
+                    (const_int 8 [0x8]))
+                (symbol_ref:DI ("free_list") [flags 0x2]  <var_decl 0x7f448319eab0 free_list>)) [0 free_list S8 A64])
+        (reg/f:DI 1 dx [orig:59 D.3315 ] [59])) malloc.c:32 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 0 ax [70])
+        (expr_list:REG_DEAD (reg/f:DI 1 dx [orig:59 D.3315 ] [59])
+            (nil))))
+(insn 13 12 14 2 (parallel [
+            (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                        (const_int -24 [0xffffffffffffffe8])) [0 kval+0 S8 A64])
+                (plus:DI (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                            (const_int -24 [0xffffffffffffffe8])) [0 kval+0 S8 A64])
+                    (const_int -1 [0xffffffffffffffff])))
+            (clobber (reg:CC 17 flags))
+        ]) malloc.c:34 274 {*adddi_1}
+     (nil))
+(insn 14 13 16 2 (set (reg:DI 0 ax [71])
+        (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [0 kval+0 S8 A64])) malloc.c:36 87 {*movdi_internal_rex64}
+     (nil))
+(insn 16 14 69 2 (set (reg:SI 1 dx [72])
+        (const_int 1 [0x1])) malloc.c:36 89 {*movsi_internal}
+     (nil))
+(insn 69 16 17 2 (set (reg:QI 2 cx [99])
+        (reg:QI 0 ax [orig:60 D.3316 ] [60])) malloc.c:36 91 {*movqi_internal}
+     (expr_list:REG_DEAD (reg:SI 0 ax [orig:60 D.3316 ] [60])
+        (nil)))
+(insn 17 69 68 2 (parallel [
+            (set (reg:SI 1 dx [orig:61 D.3317 ] [61])
+                (ashift:SI (reg:SI 1 dx [orig:61 D.3317 ] [61])
+                    (reg:QI 2 cx [99])))
+            (clobber (reg:CC 17 flags))
+        ]) malloc.c:36 521 {*ashlsi3_1}
+     (expr_list:REG_DEAD (reg:QI 2 cx [99])
+        (nil)))
+(insn 68 17 18 2 (set (reg:SI 0 ax [orig:61 D.3317 ] [61])
+        (reg:SI 1 dx [orig:61 D.3317 ] [61])) malloc.c:36 89 {*movsi_internal}
+     (expr_list:REG_DEAD (reg:SI 1 dx [orig:61 D.3317 ] [61])
+        (nil)))
+(insn 18 68 22 2 (set (reg:DI 1 dx [orig:62 D.3318 ] [62])
+        (zero_extend:DI (reg:SI 0 ax [orig:61 D.3317 ] [61]))) malloc.c:36 139 {*zero_extendsidi2_rex64}
+     (expr_list:REG_DEAD (reg:SI 0 ax [orig:61 D.3317 ] [61])
+        (nil)))
+(insn 22 18 23 2 (set (reg/f:DI 0 ax [76])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -16 [0xfffffffffffffff0])) [0 child_1+0 S8 A64])) malloc.c:36 87 {*movdi_internal_rex64}
+     (nil))
+(insn 23 22 24 2 (parallel [
+            (set (reg:DI 0 ax [75])
+                (plus:DI (reg/f:DI 0 ax [76])
+                    (reg:DI 1 dx [orig:62 D.3318 ] [62])))
+            (clobber (reg:CC 17 flags))
+        ]) malloc.c:36 274 {*adddi_1}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [76])
+        (expr_list:REG_DEAD (reg:DI 1 dx [orig:62 D.3318 ] [62])
+            (expr_list:REG_EQUAL (plus:DI (mem/f/c:DI (plus:DI (reg/f:DI 20 frame)
+                            (const_int -16 [0xfffffffffffffff0])) [0 child_1+0 S8 A64])
+                    (reg:DI 1 dx [orig:62 D.3318 ] [62]))
+                (nil)))))
+(insn 24 23 25 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 child_2+0 S8 A64])
+        (reg:DI 0 ax [75])) malloc.c:36 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 0 ax [75])
+        (nil)))
+(insn 25 24 28 2 (set (reg/f:DI 0 ax [77])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -16 [0xfffffffffffffff0])) [0 child_1+0 S8 A64])) malloc.c:37 87 {*movdi_internal_rex64}
+     (nil))
+(insn 28 25 70 2 (set (reg:QI 1 dx [80])
+        (mem/j:QI (reg/f:DI 0 ax [77]) [0 child_1_2->reserved+0 S1 A64])) malloc.c:37 91 {*movqi_internal}
+     (nil))
+(insn 70 28 30 2 (parallel [
+            (set (reg:SI 1 dx [81])
+                (and:SI (reg:SI 1 dx [80])
+                    (const_int -2 [0xfffffffffffffffe])))
+            (clobber (reg:CC 17 flags))
+        ]) malloc.c:37 402 {*andsi_1}
+     (nil))
+(insn 30 70 31 2 (set (mem/j:QI (reg/f:DI 0 ax [77]) [0 child_1_2->reserved+0 S1 A64])
+        (reg:QI 1 dx [81])) malloc.c:37 91 {*movqi_internal}
+     (expr_list:REG_DEAD (reg:QI 1 dx [81])
+        (expr_list:REG_DEAD (reg/f:DI 0 ax [77])
+            (nil))))
+(insn 31 30 34 2 (set (reg/f:DI 0 ax [82])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 child_2+0 S8 A64])) malloc.c:38 87 {*movdi_internal_rex64}
+     (nil))
+(insn 34 31 71 2 (set (reg:QI 1 dx [85])
+        (mem/j:QI (reg/f:DI 0 ax [82]) [0 child_2_8->reserved+0 S1 A64])) malloc.c:38 91 {*movqi_internal}
+     (nil))
+(insn 71 34 36 2 (parallel [
+            (set (reg:SI 1 dx [86])
+                (and:SI (reg:SI 1 dx [85])
+                    (const_int -2 [0xfffffffffffffffe])))
+            (clobber (reg:CC 17 flags))
+        ]) malloc.c:38 402 {*andsi_1}
+     (nil))
+(insn 36 71 37 2 (set (mem/j:QI (reg/f:DI 0 ax [82]) [0 child_2_8->reserved+0 S1 A64])
+        (reg:QI 1 dx [86])) malloc.c:38 91 {*movqi_internal}
+     (expr_list:REG_DEAD (reg:QI 1 dx [86])
+        (expr_list:REG_DEAD (reg/f:DI 0 ax [82])
+            (nil))))
+(insn 37 36 38 2 (set (reg:DI 0 ax [87])
+        (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [0 kval+0 S8 A64])) malloc.c:39 87 {*movdi_internal_rex64}
+     (nil))
+(insn 38 37 39 2 (set (reg:QI 1 dx [orig:63 D.3319 ] [63])
+        (reg:QI 0 ax [87])) malloc.c:39 91 {*movqi_internal}
+     (expr_list:REG_DEAD (reg:DI 0 ax [87])
+        (nil)))
+(insn 39 38 40 2 (set (reg/f:DI 0 ax [88])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 child_2+0 S8 A64])) malloc.c:39 87 {*movdi_internal_rex64}
+     (nil))
+(insn 40 39 41 2 (set (mem/j:QI (plus:DI (reg/f:DI 0 ax [88])
+                (const_int 1 [0x1])) [0 child_2_8->kval+0 S1 A8])
+        (reg:QI 1 dx [orig:63 D.3319 ] [63])) malloc.c:39 91 {*movqi_internal}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [88])
+        (expr_list:REG_DEAD (reg:QI 1 dx [orig:63 D.3319 ] [63])
+            (nil))))
+(insn 41 40 42 2 (set (reg/f:DI 0 ax [89])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 child_2+0 S8 A64])) malloc.c:39 87 {*movdi_internal_rex64}
+     (nil))
+(insn 42 41 43 2 (set (reg:QI 1 dx [orig:64 D.3319 ] [64])
+        (mem/j:QI (plus:DI (reg/f:DI 0 ax [89])
+                (const_int 1 [0x1])) [0 child_2_8->kval+0 S1 A8])) malloc.c:39 91 {*movqi_internal}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [89])
+        (nil)))
+(insn 43 42 44 2 (set (reg/f:DI 0 ax [90])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -16 [0xfffffffffffffff0])) [0 child_1+0 S8 A64])) malloc.c:39 87 {*movdi_internal_rex64}
+     (nil))
+(insn 44 43 45 2 (set (mem/j:QI (plus:DI (reg/f:DI 0 ax [90])
+                (const_int 1 [0x1])) [0 child_1_2->kval+0 S1 A8])
+        (reg:QI 1 dx [orig:64 D.3319 ] [64])) malloc.c:39 91 {*movqi_internal}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [90])
+        (expr_list:REG_DEAD (reg:QI 1 dx [orig:64 D.3319 ] [64])
+            (nil))))
+(insn 45 44 46 2 (set (reg/f:DI 0 ax [91])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -16 [0xfffffffffffffff0])) [0 child_1+0 S8 A64])) malloc.c:41 87 {*movdi_internal_rex64}
+     (nil))
+(insn 46 45 47 2 (set (reg/f:DI 1 dx [92])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 child_2+0 S8 A64])) malloc.c:41 87 {*movdi_internal_rex64}
+     (nil))
+(insn 47 46 48 2 (set (mem/f/j:DI (plus:DI (reg/f:DI 0 ax [91])
+                (const_int 8 [0x8])) [0 child_1_2->succ+0 S8 A64])
+        (reg/f:DI 1 dx [92])) malloc.c:41 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg/f:DI 1 dx [92])
+        (expr_list:REG_DEAD (reg/f:DI 0 ax [91])
+            (nil))))
+(insn 48 47 49 2 (set (reg/f:DI 0 ax [93])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 child_2+0 S8 A64])) malloc.c:42 87 {*movdi_internal_rex64}
+     (nil))
+(insn 49 48 50 2 (set (reg/f:DI 1 dx [94])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -16 [0xfffffffffffffff0])) [0 child_1+0 S8 A64])) malloc.c:42 87 {*movdi_internal_rex64}
+     (nil))
+(insn 50 49 51 2 (set (mem/f/j:DI (plus:DI (reg/f:DI 0 ax [93])
+                (const_int 16 [0x10])) [0 child_2_8->pred+0 S8 A64])
+        (reg/f:DI 1 dx [94])) malloc.c:42 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg/f:DI 1 dx [94])
+        (expr_list:REG_DEAD (reg/f:DI 0 ax [93])
+            (nil))))
+(insn 51 50 52 2 (set (reg:DI 0 ax [95])
+        (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [0 kval+0 S8 A64])) malloc.c:44 87 {*movdi_internal_rex64}
+     (nil))
+(insn 52 51 53 2 (set (reg/f:DI 1 dx [96])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -16 [0xfffffffffffffff0])) [0 child_1+0 S8 A64])) malloc.c:44 87 {*movdi_internal_rex64}
+     (nil))
+(insn 53 52 54 2 (set (mem/f/j:DI (plus:DI (mult:DI (reg:DI 0 ax [95])
+                    (const_int 8 [0x8]))
+                (symbol_ref:DI ("free_list") [flags 0x2]  <var_decl 0x7f448319eab0 free_list>)) [0 free_list S8 A64])
+        (reg/f:DI 1 dx [96])) malloc.c:44 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg/f:DI 1 dx [96])
+        (expr_list:REG_DEAD (reg:DI 0 ax [95])
+            (nil))))
+(insn 54 53 64 2 (set (reg/f:DI 0 ax [orig:65 D.3320 ] [65])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -16 [0xfffffffffffffff0])) [0 child_1+0 S8 A64])) malloc.c:46 87 {*movdi_internal_rex64}
+     (nil))
+(insn 64 54 76 2 (use (reg/i:DI 0 ax)) malloc.c:47 -1
+     (nil))
+(note 76 64 77 2 NOTE_INSN_EPILOGUE_BEG)
+(insn 77 76 78 2 (set (mem/v:BLK (scratch:DI) [0 A8])
+        (unspec:BLK [
+                (mem/v:BLK (scratch:DI) [0 A8])
+            ] UNSPEC_MEMORY_BLOCKAGE)) malloc.c:47 -1
+     (nil))
+(insn/f 78 77 79 2 (set (reg/f:DI 6 bp)
+        (mem:DI (post_inc:DI (reg/f:DI 7 sp)) [0 S8 A8])) malloc.c:47 -1
+     (expr_list:REG_CFA_DEF_CFA (plus:DI (reg/f:DI 7 sp)
+            (const_int 8 [0x8]))
+        (nil)))
+(jump_insn 79 78 80 2 (simple_return) malloc.c:47 -1
+     (nil)
+ -> simple_return)
+(barrier 80 79 0)
+
+;; Function find_block (find_block, funcdef_no=2, decl_uid=3115, cgraph_uid=2)
+
+
+
+find_block
+
+Dataflow summary:
+;;  invalidated by call 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 8 [st] 9 [st(1)] 10 [st(2)] 11 [st(3)] 12 [st(4)] 13 [st(5)] 14 [st(6)] 15 [st(7)] 17 [flags] 18 [fpsr] 19 [fpcr] 21 [xmm0] 22 [xmm1] 23 [xmm2] 24 [xmm3] 25 [xmm4] 26 [xmm5] 27 [xmm6] 28 [xmm7] 29 [mm0] 30 [mm1] 31 [mm2] 32 [mm3] 33 [mm4] 34 [mm5] 35 [mm6] 36 [mm7] 37 [r8] 38 [r9] 39 [r10] 40 [r11] 45 [xmm8] 46 [xmm9] 47 [xmm10] 48 [xmm11] 49 [xmm12] 50 [xmm13] 51 [xmm14] 52 [xmm15]
+;;  hardware regs used 	 7 [sp]
+;;  regular block artificial uses 	 6 [bp] 7 [sp]
+;;  eh block artificial uses 	 6 [bp] 7 [sp] 16 [argp] 20 [frame]
+;;  entry block defs 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 6 [bp] 7 [sp] 20 [frame] 21 [xmm0] 22 [xmm1] 23 [xmm2] 24 [xmm3] 25 [xmm4] 26 [xmm5] 27 [xmm6] 28 [xmm7] 37 [r8] 38 [r9]
+;;  exit block uses 	 0 [ax] 6 [bp] 7 [sp] 20 [frame]
+;;  regs ever live 	 0[ax] 5[di] 6[bp] 17[flags]
+;;  ref usage 	r0={6d,5u} r1={1d} r2={1d} r4={1d} r5={1d,1u} r6={3d,17u} r7={3d,11u} r17={3d,2u} r20={1d,1u} r21={1d} r22={1d} r23={1d} r24={1d} r25={1d} r26={1d} r27={1d} r28={1d} r37={1d} r38={1d} 
+;;    total ref usage 67{30d,37u,0e} in 21{21 regular + 0 call} insns.
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 45 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn/f 45 4 46 2 (set (mem:DI (pre_dec:DI (reg/f:DI 7 sp)) [0 S8 A8])
+        (reg/f:DI 6 bp)) malloc.c:50 -1
+     (nil))
+(insn/f 46 45 47 2 (set (reg/f:DI 6 bp)
+        (reg/f:DI 7 sp)) malloc.c:50 -1
+     (nil))
+(insn 47 46 48 2 (set (mem/v:BLK (scratch:DI) [0 A8])
+        (unspec:BLK [
+                (mem/v:BLK (scratch:DI) [0 A8])
+            ] UNSPEC_MEMORY_BLOCKAGE)) malloc.c:50 -1
+     (nil))
+(note 48 47 2 2 NOTE_INSN_PROLOGUE_END)
+(insn 2 48 3 2 (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [0 kval+0 S8 A64])
+        (reg:DI 5 di [ kval ])) malloc.c:50 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 5 di [ kval ])
+        (nil)))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(insn 6 3 7 2 (set (reg:DI 0 ax [62])
+        (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [0 kval+0 S8 A64])) malloc.c:52 87 {*movdi_internal_rex64}
+     (nil))
+(insn 7 6 41 2 (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 i+0 S8 A64])
+        (reg:DI 0 ax [62])) malloc.c:52 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 0 ax [62])
+        (nil)))
+(jump_insn 41 7 42 2 (set (pc)
+        (label_ref 22)) malloc.c:52 659 {jump}
+     (nil)
+ -> 22)
+(barrier 42 41 24)
+(code_label 24 42 10 3 9 "" [1 uses])
+(note 10 24 11 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+(insn 11 10 12 3 (set (reg:DI 0 ax [63])
+        (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 i+0 S8 A64])) malloc.c:53 87 {*movdi_internal_rex64}
+     (nil))
+(insn 12 11 13 3 (set (reg/f:DI 0 ax [orig:60 D.3322 ] [60])
+        (mem/f/j:DI (plus:DI (mult:DI (reg:DI 0 ax [63])
+                    (const_int 8 [0x8]))
+                (symbol_ref:DI ("free_list") [flags 0x2]  <var_decl 0x7f448319eab0 free_list>)) [0 free_list S8 A64])) malloc.c:53 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 0 ax [63])
+        (nil)))
+(insn 13 12 14 3 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg/f:DI 0 ax [orig:60 D.3322 ] [60])
+            (const_int 0 [0]))) malloc.c:53 4 {*cmpdi_ccno_1}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [orig:60 D.3322 ] [60])
+        (nil)))
+(jump_insn 14 13 15 3 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 19)
+            (pc))) malloc.c:53 621 {*jcc_1}
+     (expr_list:REG_DEAD (reg:CCZ 17 flags)
+        (nil))
+ -> 19)
+(note 15 14 16 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 16 15 43 4 (set (reg:DI 0 ax [orig:59 D.3321 ] [59])
+        (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 i+0 S8 A64])) malloc.c:54 87 {*movdi_internal_rex64}
+     (nil))
+(jump_insn 43 16 44 4 (set (pc)
+        (label_ref 29)) malloc.c:54 659 {jump}
+     (nil)
+ -> 29)
+(barrier 44 43 19)
+(code_label 19 44 20 5 7 "" [1 uses])
+(note 20 19 21 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 21 20 22 5 (parallel [
+            (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                        (const_int -8 [0xfffffffffffffff8])) [0 i+0 S8 A64])
+                (plus:DI (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                            (const_int -8 [0xfffffffffffffff8])) [0 i+0 S8 A64])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) malloc.c:52 274 {*adddi_1}
+     (expr_list:REG_UNUSED (reg:CC 17 flags)
+        (nil)))
+(code_label 22 21 23 6 6 "" [1 uses])
+(note 23 22 25 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 25 23 26 6 (set (reg:CC 17 flags)
+        (compare:CC (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                    (const_int -8 [0xfffffffffffffff8])) [0 i+0 S8 A64])
+            (const_int 24 [0x18]))) malloc.c:52 8 {*cmpdi_1}
+     (nil))
+(jump_insn 26 25 27 6 (set (pc)
+        (if_then_else (leu (reg:CC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 24)
+            (pc))) malloc.c:52 621 {*jcc_1}
+     (expr_list:REG_DEAD (reg:CC 17 flags)
+        (nil))
+ -> 24)
+(note 27 26 28 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 28 27 29 7 (set (reg:DI 0 ax [orig:59 D.3321 ] [59])
+        (const_int 0 [0])) malloc.c:56 87 {*movdi_internal_rex64}
+     (nil))
+(code_label 29 28 30 8 8 "" [1 uses])
+(note 30 29 38 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 38 30 49 8 (use (reg/i:DI 0 ax)) malloc.c:57 -1
+     (nil))
+(note 49 38 50 8 NOTE_INSN_EPILOGUE_BEG)
+(insn 50 49 51 8 (set (mem/v:BLK (scratch:DI) [0 A8])
+        (unspec:BLK [
+                (mem/v:BLK (scratch:DI) [0 A8])
+            ] UNSPEC_MEMORY_BLOCKAGE)) malloc.c:57 -1
+     (nil))
+(insn/f 51 50 52 8 (set (reg/f:DI 6 bp)
+        (mem:DI (post_inc:DI (reg/f:DI 7 sp)) [0 S8 A8])) malloc.c:57 -1
+     (expr_list:REG_CFA_DEF_CFA (plus:DI (reg/f:DI 7 sp)
+            (const_int 8 [0x8]))
+        (nil)))
+(jump_insn 52 51 53 8 (simple_return) malloc.c:57 -1
+     (nil)
+ -> simple_return)
+(barrier 53 52 0)
+
+;; Function powertwo (powertwo, funcdef_no=3, decl_uid=3122, cgraph_uid=3)
+
+
+
+powertwo
+
+Dataflow summary:
+;;  invalidated by call 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 8 [st] 9 [st(1)] 10 [st(2)] 11 [st(3)] 12 [st(4)] 13 [st(5)] 14 [st(6)] 15 [st(7)] 17 [flags] 18 [fpsr] 19 [fpcr] 21 [xmm0] 22 [xmm1] 23 [xmm2] 24 [xmm3] 25 [xmm4] 26 [xmm5] 27 [xmm6] 28 [xmm7] 29 [mm0] 30 [mm1] 31 [mm2] 32 [mm3] 33 [mm4] 34 [mm5] 35 [mm6] 36 [mm7] 37 [r8] 38 [r9] 39 [r10] 40 [r11] 45 [xmm8] 46 [xmm9] 47 [xmm10] 48 [xmm11] 49 [xmm12] 50 [xmm13] 51 [xmm14] 52 [xmm15]
+;;  hardware regs used 	 7 [sp]
+;;  regular block artificial uses 	 6 [bp] 7 [sp]
+;;  eh block artificial uses 	 6 [bp] 7 [sp] 16 [argp] 20 [frame]
+;;  entry block defs 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 6 [bp] 7 [sp] 20 [frame] 21 [xmm0] 22 [xmm1] 23 [xmm2] 24 [xmm3] 25 [xmm4] 26 [xmm5] 27 [xmm6] 28 [xmm7] 37 [r8] 38 [r9]
+;;  exit block uses 	 0 [ax] 6 [bp] 7 [sp] 20 [frame]
+;;  regs ever live 	 0[ax] 5[di] 6[bp] 17[flags]
+;;  ref usage 	r0={3d,3u} r1={1d} r2={1d} r4={1d} r5={1d,1u} r6={3d,16u} r7={3d,8u} r17={3d,1u} r20={1d,1u} r21={1d} r22={1d} r23={1d} r24={1d} r25={1d} r26={1d} r27={1d} r28={1d} r37={1d} r38={1d} 
+;;    total ref usage 57{27d,30u,0e} in 17{17 regular + 0 call} insns.
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 35 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn/f 35 4 36 2 (set (mem:DI (pre_dec:DI (reg/f:DI 7 sp)) [0 S8 A8])
+        (reg/f:DI 6 bp)) malloc.c:60 -1
+     (nil))
+(insn/f 36 35 37 2 (set (reg/f:DI 6 bp)
+        (reg/f:DI 7 sp)) malloc.c:60 -1
+     (nil))
+(insn 37 36 38 2 (set (mem/v:BLK (scratch:DI) [0 A8])
+        (unspec:BLK [
+                (mem/v:BLK (scratch:DI) [0 A8])
+            ] UNSPEC_MEMORY_BLOCKAGE)) malloc.c:60 -1
+     (nil))
+(note 38 37 2 2 NOTE_INSN_PROLOGUE_END)
+(insn 2 38 3 2 (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [0 size+0 S8 A64])
+        (reg:DI 5 di [ size ])) malloc.c:60 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 5 di [ size ])
+        (nil)))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(insn 6 3 7 2 (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -16 [0xfffffffffffffff0])) [0 i+0 S8 A64])
+        (const_int 0 [0])) malloc.c:62 87 {*movdi_internal_rex64}
+     (nil))
+(insn 7 6 33 2 (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 j+0 S8 A64])
+        (const_int 1 [0x1])) malloc.c:63 87 {*movdi_internal_rex64}
+     (nil))
+(jump_insn 33 7 34 2 (set (pc)
+        (label_ref 13)) malloc.c:64 659 {jump}
+     (nil)
+ -> 13)
+(barrier 34 33 15)
+(code_label 15 34 10 3 12 "" [1 uses])
+(note 10 15 11 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+(insn 11 10 12 3 (parallel [
+            (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                        (const_int -8 [0xfffffffffffffff8])) [0 j+0 S8 A64])
+                (ashift:DI (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                            (const_int -8 [0xfffffffffffffff8])) [0 j+0 S8 A64])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) malloc.c:65 522 {*ashldi3_1}
+     (expr_list:REG_UNUSED (reg:CC 17 flags)
+        (nil)))
+(insn 12 11 13 3 (parallel [
+            (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                        (const_int -16 [0xfffffffffffffff0])) [0 i+0 S8 A64])
+                (plus:DI (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                            (const_int -16 [0xfffffffffffffff0])) [0 i+0 S8 A64])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) malloc.c:66 274 {*adddi_1}
+     (expr_list:REG_UNUSED (reg:CC 17 flags)
+        (nil)))
+(code_label 13 12 14 4 11 "" [1 uses])
+(note 14 13 16 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 16 14 17 4 (set (reg:DI 0 ax [61])
+        (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 j+0 S8 A64])) malloc.c:64 87 {*movdi_internal_rex64}
+     (nil))
+(insn 17 16 18 4 (set (reg:CC 17 flags)
+        (compare:CC (reg:DI 0 ax [61])
+            (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                    (const_int -24 [0xffffffffffffffe8])) [0 size+0 S8 A64]))) malloc.c:64 8 {*cmpdi_1}
+     (expr_list:REG_DEAD (reg:DI 0 ax [61])
+        (nil)))
+(jump_insn 18 17 19 4 (set (pc)
+        (if_then_else (ltu (reg:CC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 15)
+            (pc))) malloc.c:64 621 {*jcc_1}
+     (expr_list:REG_DEAD (reg:CC 17 flags)
+        (nil))
+ -> 15)
+(note 19 18 20 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 20 19 30 5 (set (reg:DI 0 ax [orig:59 D.3323 ] [59])
+        (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -16 [0xfffffffffffffff0])) [0 i+0 S8 A64])) malloc.c:68 87 {*movdi_internal_rex64}
+     (nil))
+(insn 30 20 39 5 (use (reg/i:DI 0 ax)) malloc.c:69 -1
+     (nil))
+(note 39 30 40 5 NOTE_INSN_EPILOGUE_BEG)
+(insn 40 39 41 5 (set (mem/v:BLK (scratch:DI) [0 A8])
+        (unspec:BLK [
+                (mem/v:BLK (scratch:DI) [0 A8])
+            ] UNSPEC_MEMORY_BLOCKAGE)) malloc.c:69 -1
+     (nil))
+(insn/f 41 40 42 5 (set (reg/f:DI 6 bp)
+        (mem:DI (post_inc:DI (reg/f:DI 7 sp)) [0 S8 A8])) malloc.c:69 -1
+     (expr_list:REG_CFA_DEF_CFA (plus:DI (reg/f:DI 7 sp)
+            (const_int 8 [0x8]))
+        (nil)))
+(jump_insn 42 41 43 5 (simple_return) malloc.c:69 -1
+     (nil)
+ -> simple_return)
+(barrier 43 42 0)
+
+;; Function malloc (malloc, funcdef_no=4, decl_uid=975, cgraph_uid=4)
+
+
+
+malloc
+
+Dataflow summary:
+;;  invalidated by call 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 8 [st] 9 [st(1)] 10 [st(2)] 11 [st(3)] 12 [st(4)] 13 [st(5)] 14 [st(6)] 15 [st(7)] 17 [flags] 18 [fpsr] 19 [fpcr] 21 [xmm0] 22 [xmm1] 23 [xmm2] 24 [xmm3] 25 [xmm4] 26 [xmm5] 27 [xmm6] 28 [xmm7] 29 [mm0] 30 [mm1] 31 [mm2] 32 [mm3] 33 [mm4] 34 [mm5] 35 [mm6] 36 [mm7] 37 [r8] 38 [r9] 39 [r10] 40 [r11] 45 [xmm8] 46 [xmm9] 47 [xmm10] 48 [xmm11] 49 [xmm12] 50 [xmm13] 51 [xmm14] 52 [xmm15]
+;;  hardware regs used 	 7 [sp]
+;;  regular block artificial uses 	 6 [bp] 7 [sp]
+;;  eh block artificial uses 	 6 [bp] 7 [sp] 16 [argp] 20 [frame]
+;;  entry block defs 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 6 [bp] 7 [sp] 20 [frame] 21 [xmm0] 22 [xmm1] 23 [xmm2] 24 [xmm3] 25 [xmm4] 26 [xmm5] 27 [xmm6] 28 [xmm7] 37 [r8] 38 [r9]
+;;  exit block uses 	 0 [ax] 6 [bp] 7 [sp] 20 [frame]
+;;  regs ever live 	 0[ax] 1[dx] 4[si] 5[di] 6[bp] 7[sp] 17[flags]
+;;  ref usage 	r0={39d,33u} r1={15d,5u} r2={10d} r4={13d,3u} r5={19d,10u} r6={3d,41u} r7={4d,26u} r8={9d} r9={9d} r10={9d} r11={9d} r12={9d} r13={9d} r14={9d} r15={9d} r17={19d,4u} r18={9d} r19={9d} r20={1d,1u,2e} r21={10d} r22={10d} r23={10d} r24={10d} r25={10d} r26={10d} r27={10d} r28={10d} r29={9d} r30={9d} r31={9d} r32={9d} r33={9d} r34={9d} r35={9d} r36={9d} r37={10d} r38={10d} r39={9d} r40={9d} r45={9d} r46={9d} r47={9d} r48={9d} r49={9d} r50={9d} r51={9d} r52={9d} 
+;;    total ref usage 600{475d,123u,2e} in 88{79 regular + 9 call} insns.
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 136 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn/f 136 4 137 2 (set (mem:DI (pre_dec:DI (reg/f:DI 7 sp)) [0 S8 A8])
+        (reg/f:DI 6 bp)) malloc.c:72 -1
+     (nil))
+(insn/f 137 136 138 2 (set (reg/f:DI 6 bp)
+        (reg/f:DI 7 sp)) malloc.c:72 -1
+     (nil))
+(insn/f 138 137 139 2 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 7 sp)
+                    (const_int -48 [0xffffffffffffffd0])))
+            (clobber (reg:CC 17 flags))
+            (clobber (mem:BLK (scratch) [0 A8]))
+        ]) malloc.c:72 -1
+     (nil))
+(note 139 138 2 2 NOTE_INSN_PROLOGUE_END)
+(insn 2 139 3 2 (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -40 [0xffffffffffffffd8])) [0 size+0 S8 A64])
+        (reg:DI 5 di [ size ])) malloc.c:72 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 5 di [ size ])
+        (nil)))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(insn 6 3 7 2 (set (reg/f:DI 0 ax [orig:60 base_addr.4 ] [60])
+        (mem/f/c:DI (symbol_ref:DI ("base_addr") [flags 0x2]  <var_decl 0x7f448319eb48 base_addr>) [0 base_addr+0 S8 A64])) malloc.c:75 87 {*movdi_internal_rex64}
+     (nil))
+(insn 7 6 8 2 (set (reg:DI 4 si)
+        (reg/f:DI 0 ax [orig:60 base_addr.4 ] [60])) malloc.c:75 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [orig:60 base_addr.4 ] [60])
+        (nil)))
+(insn 8 7 9 2 (set (reg:DI 5 di)
+        (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 0x7f4483222720 *.LC0>)) malloc.c:75 87 {*movdi_internal_rex64}
+     (nil))
+(insn 9 8 10 2 (set (reg:QI 0 ax)
+        (const_int 0 [0])) malloc.c:75 91 {*movqi_internal}
+     (nil))
+(call_insn 10 9 11 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7f448341ec00 printf>) [0 __builtin_printf S1 A8])
+            (const_int 0 [0]))) malloc.c:75 672 {*call_value}
+     (expr_list:REG_DEAD (reg:DI 5 di)
+        (expr_list:REG_DEAD (reg:DI 4 si)
+            (expr_list:REG_UNUSED (reg:SI 0 ax)
+                (nil))))
+    (expr_list:REG_DEP_TRUE (use (reg:QI 0 ax))
+        (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 5 di))
+            (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 4 si))
+                (nil)))))
+(insn 11 10 12 2 (set (reg/f:DI 0 ax [orig:61 base_addr.5 ] [61])
+        (mem/f/c:DI (symbol_ref:DI ("base_addr") [flags 0x2]  <var_decl 0x7f448319eb48 base_addr>) [0 base_addr+0 S8 A64])) malloc.c:77 87 {*movdi_internal_rex64}
+     (nil))
+(insn 12 11 13 2 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg/f:DI 0 ax [orig:61 base_addr.5 ] [61])
+            (const_int 0 [0]))) malloc.c:77 4 {*cmpdi_ccno_1}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [orig:61 base_addr.5 ] [61])
+        (nil)))
+(jump_insn 13 12 14 2 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 67)
+            (pc))) malloc.c:77 621 {*jcc_1}
+     (expr_list:REG_DEAD (reg:CCZ 17 flags)
+        (nil))
+ -> 67)
+(note 14 13 15 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+(insn 15 14 16 3 (set (reg:DI 0 ax [68])
+        (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -40 [0xffffffffffffffd8])) [0 size+0 S8 A64])) malloc.c:78 87 {*movdi_internal_rex64}
+     (nil))
+(insn 16 15 17 3 (parallel [
+            (set (reg:DI 0 ax [orig:62 D.3325 ] [62])
+                (plus:DI (reg:DI 0 ax [68])
+                    (const_int 24 [0x18])))
+            (clobber (reg:CC 17 flags))
+        ]) malloc.c:78 274 {*adddi_1}
+     (expr_list:REG_DEAD (reg:DI 0 ax [68])
+        (expr_list:REG_UNUSED (reg:CC 17 flags)
+            (expr_list:REG_EQUAL (plus:DI (mem/c:DI (plus:DI (reg/f:DI 20 frame)
+                            (const_int -40 [0xffffffffffffffd8])) [0 size+0 S8 A64])
+                    (const_int 24 [0x18]))
+                (nil)))))
+(insn 17 16 18 3 (set (reg:DI 5 di)
+        (reg:DI 0 ax [orig:62 D.3325 ] [62])) malloc.c:78 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 0 ax [orig:62 D.3325 ] [62])
+        (nil)))
+(call_insn 18 17 20 3 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("powertwo") [flags 0x3]  <function_decl 0x7f44831d5800 powertwo>) [0 powertwo S1 A8])
+            (const_int 0 [0]))) malloc.c:78 672 {*call_value}
+     (expr_list:REG_DEAD (reg:DI 5 di)
+        (nil))
+    (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 5 di))
+        (nil)))
+(insn 20 18 21 3 (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [0 K+0 S8 A64])
+        (reg:DI 0 ax [69])) malloc.c:78 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 0 ax [69])
+        (nil)))
+(insn 21 20 22 3 (set (reg:DI 0 ax [70])
+        (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [0 K+0 S8 A64])) malloc.c:79 87 {*movdi_internal_rex64}
+     (nil))
+(insn 22 21 23 3 (set (reg:DI 5 di)
+        (reg:DI 0 ax [70])) malloc.c:79 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 0 ax [70])
+        (nil)))
+(call_insn 23 22 25 3 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("find_block") [flags 0x3]  <function_decl 0x7f44831d5700 find_block>) [0 find_block S1 A8])
+            (const_int 0 [0]))) malloc.c:79 672 {*call_value}
+     (expr_list:REG_DEAD (reg:DI 5 di)
+        (nil))
+    (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 5 di))
+        (nil)))
+(insn 25 23 26 3 (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -16 [0xfffffffffffffff0])) [0 J+0 S8 A64])
+        (reg:DI 0 ax [71])) malloc.c:79 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 0 ax [71])
+        (nil)))
+(insn 26 25 27 3 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                    (const_int -16 [0xfffffffffffffff0])) [0 J+0 S8 A64])
+            (const_int 0 [0]))) malloc.c:80 4 {*cmpdi_ccno_1}
+     (nil))
+(jump_insn 27 26 28 3 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 32)
+            (pc))) malloc.c:80 621 {*jcc_1}
+     (expr_list:REG_DEAD (reg:CCZ 17 flags)
+        (nil))
+ -> 32)
+(note 28 27 29 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 29 28 126 4 (set (reg/f:DI 0 ax [orig:59 D.3324 ] [59])
+        (const_int 0 [0])) malloc.c:80 87 {*movdi_internal_rex64}
+     (nil))
+(jump_insn 126 29 127 4 (set (pc)
+        (label_ref 114)) malloc.c:80 659 {jump}
+     (nil)
+ -> 114)
+(barrier 127 126 32)
+(code_label 32 127 33 5 16 "" [1 uses])
+(note 33 32 34 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 34 33 35 5 (set (reg:DI 0 ax [72])
+        (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -16 [0xfffffffffffffff0])) [0 J+0 S8 A64])) malloc.c:81 87 {*movdi_internal_rex64}
+     (nil))
+(insn 35 34 128 5 (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -32 [0xffffffffffffffe0])) [0 I+0 S8 A64])
+        (reg:DI 0 ax [72])) malloc.c:81 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 0 ax [72])
+        (nil)))
+(jump_insn 128 35 129 5 (set (pc)
+        (label_ref 43)) malloc.c:81 659 {jump}
+     (nil)
+ -> 43)
+(barrier 129 128 45)
+(code_label 45 129 38 6 19 "" [1 uses])
+(note 38 45 39 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 39 38 40 6 (set (reg:DI 0 ax [73])
+        (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -32 [0xffffffffffffffe0])) [0 I+0 S8 A64])) malloc.c:82 87 {*movdi_internal_rex64}
+     (nil))
+(insn 40 39 41 6 (set (reg:DI 5 di)
+        (reg:DI 0 ax [73])) malloc.c:82 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 0 ax [73])
+        (nil)))
+(call_insn 41 40 42 6 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("split_block") [flags 0x3]  <function_decl 0x7f44831d5600 split_block>) [0 split_block S1 A8])
+            (const_int 0 [0]))) malloc.c:82 672 {*call_value}
+     (expr_list:REG_DEAD (reg:DI 5 di)
+        (expr_list:REG_UNUSED (reg:DI 0 ax)
+            (nil)))
+    (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 5 di))
+        (nil)))
+(insn 42 41 43 6 (parallel [
+            (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                        (const_int -32 [0xffffffffffffffe0])) [0 I+0 S8 A64])
+                (plus:DI (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                            (const_int -32 [0xffffffffffffffe0])) [0 I+0 S8 A64])
+                    (const_int -1 [0xffffffffffffffff])))
+            (clobber (reg:CC 17 flags))
+        ]) malloc.c:81 274 {*adddi_1}
+     (expr_list:REG_UNUSED (reg:CC 17 flags)
+        (nil)))
+(code_label 43 42 44 7 18 "" [1 uses])
+(note 44 43 46 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 46 44 47 7 (set (reg:DI 0 ax [74])
+        (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -32 [0xffffffffffffffe0])) [0 I+0 S8 A64])) malloc.c:81 87 {*movdi_internal_rex64}
+     (nil))
+(insn 47 46 48 7 (set (reg:CC 17 flags)
+        (compare:CC (reg:DI 0 ax [74])
+            (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                    (const_int -24 [0xffffffffffffffe8])) [0 K+0 S8 A64]))) malloc.c:81 8 {*cmpdi_1}
+     (expr_list:REG_DEAD (reg:DI 0 ax [74])
+        (nil)))
+(jump_insn 48 47 49 7 (set (pc)
+        (if_then_else (gtu (reg:CC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 45)
+            (pc))) malloc.c:81 621 {*jcc_1}
+     (expr_list:REG_DEAD (reg:CC 17 flags)
+        (nil))
+ -> 45)
+(note 49 48 50 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 50 49 51 8 (set (reg:DI 0 ax [75])
+        (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [0 K+0 S8 A64])) malloc.c:85 87 {*movdi_internal_rex64}
+     (nil))
+(insn 51 50 52 8 (set (reg/f:DI 0 ax [76])
+        (mem/f/j:DI (plus:DI (mult:DI (reg:DI 0 ax [75])
+                    (const_int 8 [0x8]))
+                (symbol_ref:DI ("free_list") [flags 0x2]  <var_decl 0x7f448319eab0 free_list>)) [0 free_list S8 A64])) malloc.c:85 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 0 ax [75])
+        (nil)))
+(insn 52 51 53 8 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 b+0 S8 A64])
+        (reg/f:DI 0 ax [76])) malloc.c:85 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [76])
+        (nil)))
+(insn 53 52 56 8 (set (reg/f:DI 0 ax [77])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 b+0 S8 A64])) malloc.c:87 87 {*movdi_internal_rex64}
+     (nil))
+(insn 56 53 135 8 (set (reg:QI 1 dx [80])
+        (mem/j:QI (reg/f:DI 0 ax [77]) [0 b_12->reserved+0 S1 A64])) malloc.c:87 91 {*movqi_internal}
+     (nil))
+(insn 135 56 58 8 (parallel [
+            (set (reg:SI 1 dx [81])
+                (ior:SI (reg:SI 1 dx [80])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) malloc.c:87 421 {*iorsi_1}
+     (nil))
+(insn 58 135 59 8 (set (mem/j:QI (reg/f:DI 0 ax [77]) [0 b_12->reserved+0 S1 A64])
+        (reg:QI 1 dx [81])) malloc.c:87 91 {*movqi_internal}
+     (expr_list:REG_DEAD (reg:QI 1 dx [81])
+        (expr_list:REG_DEAD (reg/f:DI 0 ax [77])
+            (nil))))
+(insn 59 58 60 8 (set (reg/f:DI 0 ax [82])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 b+0 S8 A64])) malloc.c:88 87 {*movdi_internal_rex64}
+     (nil))
+(insn 60 59 61 8 (set (reg/f:DI 1 dx [orig:63 D.3326 ] [63])
+        (mem/f/j:DI (plus:DI (reg/f:DI 0 ax [82])
+                (const_int 8 [0x8])) [0 b_12->succ+0 S8 A64])) malloc.c:88 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [82])
+        (nil)))
+(insn 61 60 62 8 (set (reg:DI 0 ax [83])
+        (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [0 K+0 S8 A64])) malloc.c:88 87 {*movdi_internal_rex64}
+     (nil))
+(insn 62 61 63 8 (set (mem/f/j:DI (plus:DI (mult:DI (reg:DI 0 ax [83])
+                    (const_int 8 [0x8]))
+                (symbol_ref:DI ("free_list") [flags 0x2]  <var_decl 0x7f448319eab0 free_list>)) [0 free_list S8 A64])
+        (reg/f:DI 1 dx [orig:63 D.3326 ] [63])) malloc.c:88 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 0 ax [83])
+        (expr_list:REG_DEAD (reg/f:DI 1 dx [orig:63 D.3326 ] [63])
+            (nil))))
+(insn 63 62 64 8 (set (reg/f:DI 0 ax [84])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 b+0 S8 A64])) malloc.c:89 87 {*movdi_internal_rex64}
+     (nil))
+(insn 64 63 130 8 (parallel [
+            (set (reg/f:DI 0 ax [orig:59 D.3324 ] [59])
+                (plus:DI (reg/f:DI 0 ax [84])
+                    (const_int 24 [0x18])))
+            (clobber (reg:CC 17 flags))
+        ]) malloc.c:89 274 {*adddi_1}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [84])
+        (expr_list:REG_UNUSED (reg:CC 17 flags)
+            (expr_list:REG_EQUAL (plus:DI (mem/f/c:DI (plus:DI (reg/f:DI 20 frame)
+                            (const_int -8 [0xfffffffffffffff8])) [0 b+0 S8 A64])
+                    (const_int 24 [0x18]))
+                (nil)))))
+(jump_insn 130 64 131 8 (set (pc)
+        (label_ref 114)) malloc.c:89 659 {jump}
+     (nil)
+ -> 114)
+(barrier 131 130 67)
+(code_label 67 131 68 9 15 "" [1 uses])
+(note 68 67 69 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 69 68 70 9 (set (reg:DI 5 di)
+        (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 0x7f44832227b8 *.LC1>)) malloc.c:92 87 {*movdi_internal_rex64}
+     (nil))
+(call_insn 70 69 71 9 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("puts") [flags 0x41]  <function_decl 0x7f4483420300 __builtin_puts>) [0 __builtin_puts S1 A8])
+            (const_int 0 [0]))) malloc.c:92 672 {*call_value}
+     (expr_list:REG_DEAD (reg:DI 5 di)
+        (expr_list:REG_UNUSED (reg:SI 0 ax)
+            (nil)))
+    (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 5 di))
+        (nil)))
+(insn 71 70 72 9 (set (reg:DI 5 di)
+        (const_int 16777216 [0x1000000])) malloc.c:94 87 {*movdi_internal_rex64}
+     (nil))
+(call_insn 72 71 74 9 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("sbrk") [flags 0x41]  <function_decl 0x7f4483569a00 sbrk>) [0 sbrk S1 A8])
+            (const_int 0 [0]))) malloc.c:94 672 {*call_value}
+     (expr_list:REG_DEAD (reg:DI 5 di)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 5 di))
+        (nil)))
+(insn 74 72 75 9 (set (mem/f/c:DI (symbol_ref:DI ("base_addr") [flags 0x2]  <var_decl 0x7f448319eb48 base_addr>) [0 base_addr+0 S8 A64])
+        (reg/f:DI 0 ax [orig:64 base_addr.6 ] [64])) malloc.c:94 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [orig:64 base_addr.6 ] [64])
+        (nil)))
+(insn 75 74 76 9 (set (reg/f:DI 0 ax [orig:65 base_addr.7 ] [65])
+        (mem/f/c:DI (symbol_ref:DI ("base_addr") [flags 0x2]  <var_decl 0x7f448319eb48 base_addr>) [0 base_addr+0 S8 A64])) malloc.c:96 87 {*movdi_internal_rex64}
+     (nil))
+(insn 76 75 77 9 (set (reg:DI 4 si)
+        (reg/f:DI 0 ax [orig:65 base_addr.7 ] [65])) malloc.c:96 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [orig:65 base_addr.7 ] [65])
+        (nil)))
+(insn 77 76 78 9 (set (reg:DI 5 di)
+        (symbol_ref/f:DI ("*.LC2") [flags 0x2]  <var_decl 0x7f4483222850 *.LC2>)) malloc.c:96 87 {*movdi_internal_rex64}
+     (nil))
+(insn 78 77 79 9 (set (reg:QI 0 ax)
+        (const_int 0 [0])) malloc.c:96 91 {*movqi_internal}
+     (nil))
+(call_insn 79 78 80 9 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7f448341ec00 printf>) [0 __builtin_printf S1 A8])
+            (const_int 0 [0]))) malloc.c:96 672 {*call_value}
+     (expr_list:REG_DEAD (reg:DI 5 di)
+        (expr_list:REG_DEAD (reg:DI 4 si)
+            (expr_list:REG_UNUSED (reg:SI 0 ax)
+                (nil))))
+    (expr_list:REG_DEP_TRUE (use (reg:QI 0 ax))
+        (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 5 di))
+            (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 4 si))
+                (nil)))))
+(insn 80 79 81 9 (set (reg:SI 4 si)
+        (const_int 16777216 [0x1000000])) malloc.c:97 89 {*movsi_internal}
+     (nil))
+(insn 81 80 82 9 (set (reg:DI 5 di)
+        (symbol_ref/f:DI ("*.LC3") [flags 0x2]  <var_decl 0x7f44832228e8 *.LC3>)) malloc.c:97 87 {*movdi_internal_rex64}
+     (nil))
+(insn 82 81 83 9 (set (reg:QI 0 ax)
+        (const_int 0 [0])) malloc.c:97 91 {*movqi_internal}
+     (nil))
+(call_insn 83 82 84 9 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7f448341ec00 printf>) [0 __builtin_printf S1 A8])
+            (const_int 0 [0]))) malloc.c:97 672 {*call_value}
+     (expr_list:REG_DEAD (reg:DI 5 di)
+        (expr_list:REG_DEAD (reg:SI 4 si)
+            (expr_list:REG_UNUSED (reg:SI 0 ax)
+                (nil))))
+    (expr_list:REG_DEP_TRUE (use (reg:QI 0 ax))
+        (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 5 di))
+            (expr_list:REG_BR_PRED (use (reg:SI 4 si))
+                (nil)))))
+(insn 84 83 85 9 (set (reg/f:DI 0 ax [orig:66 base_addr.8 ] [66])
+        (mem/f/c:DI (symbol_ref:DI ("base_addr") [flags 0x2]  <var_decl 0x7f448319eb48 base_addr>) [0 base_addr+0 S8 A64])) malloc.c:99 87 {*movdi_internal_rex64}
+     (nil))
+(insn 85 84 86 9 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg/f:DI 0 ax [orig:66 base_addr.8 ] [66])
+            (const_int 0 [0]))) malloc.c:99 4 {*cmpdi_ccno_1}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [orig:66 base_addr.8 ] [66])
+        (nil)))
+(jump_insn 86 85 87 9 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 91)
+            (pc))) malloc.c:99 621 {*jcc_1}
+     (expr_list:REG_DEAD (reg:CCZ 17 flags)
+        (nil))
+ -> 91)
+(note 87 86 88 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(insn 88 87 132 10 (set (reg/f:DI 0 ax [orig:59 D.3324 ] [59])
+        (const_int 0 [0])) malloc.c:99 87 {*movdi_internal_rex64}
+     (nil))
+(jump_insn 132 88 133 10 (set (pc)
+        (label_ref 114)) malloc.c:99 659 {jump}
+     (nil)
+ -> 114)
+(barrier 133 132 91)
+(code_label 91 133 92 11 20 "" [1 uses])
+(note 92 91 93 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(insn 93 92 94 11 (set (reg/f:DI 0 ax [85])
+        (mem/f/c:DI (symbol_ref:DI ("base_addr") [flags 0x2]  <var_decl 0x7f448319eb48 base_addr>) [0 base_addr+0 S8 A64])) malloc.c:101 87 {*movdi_internal_rex64}
+     (nil))
+(insn 94 93 95 11 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 b+0 S8 A64])
+        (reg/f:DI 0 ax [85])) malloc.c:101 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [85])
+        (nil)))
+(insn 95 94 96 11 (set (reg/f:DI 0 ax [86])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 b+0 S8 A64])) malloc.c:102 87 {*movdi_internal_rex64}
+     (nil))
+(insn 96 95 97 11 (set (mem/j:QI (plus:DI (reg/f:DI 0 ax [86])
+                (const_int 1 [0x1])) [0 b_19->kval+0 S1 A8])
+        (const_int 24 [0x18])) malloc.c:102 91 {*movqi_internal}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [86])
+        (nil)))
+(insn 97 96 98 11 (set (reg/f:DI 0 ax [87])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 b+0 S8 A64])) malloc.c:103 87 {*movdi_internal_rex64}
+     (nil))
+(insn 98 97 99 11 (set (mem/f/j:DI (plus:DI (reg/f:DI 0 ax [87])
+                (const_int 8 [0x8])) [0 b_19->succ+0 S8 A64])
+        (const_int 0 [0])) malloc.c:103 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [87])
+        (nil)))
+(insn 99 98 100 11 (set (reg/f:DI 0 ax [88])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 b+0 S8 A64])) malloc.c:104 87 {*movdi_internal_rex64}
+     (nil))
+(insn 100 99 101 11 (set (mem/f/j:DI (plus:DI (reg/f:DI 0 ax [88])
+                (const_int 16 [0x10])) [0 b_19->pred+0 S8 A64])
+        (const_int 0 [0])) malloc.c:104 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [88])
+        (nil)))
+(insn 101 100 104 11 (set (reg/f:DI 0 ax [89])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 b+0 S8 A64])) malloc.c:105 87 {*movdi_internal_rex64}
+     (nil))
+(insn 104 101 134 11 (set (reg:QI 1 dx [92])
+        (mem/j:QI (reg/f:DI 0 ax [89]) [0 b_19->reserved+0 S1 A64])) malloc.c:105 91 {*movqi_internal}
+     (nil))
+(insn 134 104 106 11 (parallel [
+            (set (reg:SI 1 dx [93])
+                (and:SI (reg:SI 1 dx [92])
+                    (const_int -2 [0xfffffffffffffffe])))
+            (clobber (reg:CC 17 flags))
+        ]) malloc.c:105 402 {*andsi_1}
+     (nil))
+(insn 106 134 107 11 (set (mem/j:QI (reg/f:DI 0 ax [89]) [0 b_19->reserved+0 S1 A64])
+        (reg:QI 1 dx [93])) malloc.c:105 91 {*movqi_internal}
+     (expr_list:REG_DEAD (reg:QI 1 dx [93])
+        (expr_list:REG_DEAD (reg/f:DI 0 ax [89])
+            (nil))))
+(insn 107 106 108 11 (set (reg/f:DI 0 ax [94])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 b+0 S8 A64])) malloc.c:106 87 {*movdi_internal_rex64}
+     (nil))
+(insn 108 107 109 11 (set (mem/f/j:DI (const:DI (plus:DI (symbol_ref:DI ("free_list") [flags 0x2]  <var_decl 0x7f448319eab0 free_list>)
+                    (const_int 192 [0xc0]))) [0 free_list+192 S8 A256])
+        (reg/f:DI 0 ax [94])) malloc.c:106 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [94])
+        (nil)))
+(insn 109 108 110 11 (set (reg:DI 0 ax [95])
+        (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -40 [0xffffffffffffffd8])) [0 size+0 S8 A64])) malloc.c:107 87 {*movdi_internal_rex64}
+     (nil))
+(insn 110 109 111 11 (set (reg:DI 5 di)
+        (reg:DI 0 ax [95])) malloc.c:107 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 0 ax [95])
+        (nil)))
+(call_insn 111 110 114 11 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("malloc") [flags 0x3]  <function_decl 0x7f448343e800 malloc>) [0 __builtin_malloc S1 A8])
+            (const_int 0 [0]))) malloc.c:107 672 {*call_value}
+     (expr_list:REG_DEAD (reg:DI 5 di)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 5 di))
+        (nil)))
+(code_label 114 111 115 12 17 "" [3 uses])
+(note 115 114 123 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+(insn 123 115 140 12 (use (reg/i:DI 0 ax)) malloc.c:109 -1
+     (nil))
+(note 140 123 141 12 NOTE_INSN_EPILOGUE_BEG)
+(insn/f 141 140 142 12 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 6 bp)
+                    (const_int 8 [0x8])))
+            (set (reg/f:DI 6 bp)
+                (mem:DI (reg/f:DI 6 bp) [0 S8 A8]))
+            (clobber (mem:BLK (scratch) [0 A8]))
+        ]) malloc.c:109 -1
+     (expr_list:REG_CFA_DEF_CFA (plus:DI (reg/f:DI 7 sp)
+            (const_int 8 [0x8]))
+        (nil)))
+(jump_insn 142 141 143 12 (simple_return) malloc.c:109 -1
+     (nil)
+ -> simple_return)
+(barrier 143 142 0)
+
+;; Function push_block (push_block, funcdef_no=5, decl_uid=3140, cgraph_uid=5)
+
+
+
+push_block
+
+Dataflow summary:
+;;  invalidated by call 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 8 [st] 9 [st(1)] 10 [st(2)] 11 [st(3)] 12 [st(4)] 13 [st(5)] 14 [st(6)] 15 [st(7)] 17 [flags] 18 [fpsr] 19 [fpcr] 21 [xmm0] 22 [xmm1] 23 [xmm2] 24 [xmm3] 25 [xmm4] 26 [xmm5] 27 [xmm6] 28 [xmm7] 29 [mm0] 30 [mm1] 31 [mm2] 32 [mm3] 33 [mm4] 34 [mm5] 35 [mm6] 36 [mm7] 37 [r8] 38 [r9] 39 [r10] 40 [r11] 45 [xmm8] 46 [xmm9] 47 [xmm10] 48 [xmm11] 49 [xmm12] 50 [xmm13] 51 [xmm14] 52 [xmm15]
+;;  hardware regs used 	 7 [sp]
+;;  regular block artificial uses 	 6 [bp] 7 [sp]
+;;  eh block artificial uses 	 6 [bp] 7 [sp] 16 [argp] 20 [frame]
+;;  entry block defs 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 6 [bp] 7 [sp] 20 [frame] 21 [xmm0] 22 [xmm1] 23 [xmm2] 24 [xmm3] 25 [xmm4] 26 [xmm5] 27 [xmm6] 28 [xmm7] 37 [r8] 38 [r9]
+;;  exit block uses 	 6 [bp] 7 [sp] 20 [frame]
+;;  regs ever live 	 0[ax] 1[dx] 5[di] 6[bp] 17[flags]
+;;  ref usage 	r0={26d,25u} r1={5d,4u} r2={1d} r4={1d} r5={1d,1u} r6={3d,15u} r7={3d,7u} r17={1d,1u} r20={1d,1u} r21={1d} r22={1d} r23={1d} r24={1d} r25={1d} r26={1d} r27={1d} r28={1d} r37={1d} r38={1d} 
+;;    total ref usage 106{52d,54u,0e} in 42{42 regular + 0 call} insns.
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 46 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn/f 46 4 47 2 (set (mem:DI (pre_dec:DI (reg/f:DI 7 sp)) [0 S8 A8])
+        (reg/f:DI 6 bp)) malloc.c:111 -1
+     (nil))
+(insn/f 47 46 48 2 (set (reg/f:DI 6 bp)
+        (reg/f:DI 7 sp)) malloc.c:111 -1
+     (nil))
+(insn 48 47 49 2 (set (mem/v:BLK (scratch:DI) [0 A8])
+        (unspec:BLK [
+                (mem/v:BLK (scratch:DI) [0 A8])
+            ] UNSPEC_MEMORY_BLOCKAGE)) malloc.c:111 -1
+     (nil))
+(note 49 48 2 2 NOTE_INSN_PROLOGUE_END)
+(insn 2 49 3 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 current+0 S8 A64])
+        (reg:DI 5 di [ current ])) malloc.c:111 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 5 di [ current ])
+        (nil)))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(insn 6 3 7 2 (set (reg/f:DI 0 ax [74])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 current+0 S8 A64])) malloc.c:112 87 {*movdi_internal_rex64}
+     (nil))
+(insn 7 6 8 2 (set (reg:QI 0 ax [orig:59 D.3331 ] [59])
+        (mem/j:QI (plus:DI (reg/f:DI 0 ax [74])
+                (const_int 1 [0x1])) [0 current_1(D)->kval+0 S1 A8])) malloc.c:112 91 {*movqi_internal}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [74])
+        (nil)))
+(insn 8 7 9 2 (set (reg:SI 0 ax [orig:60 D.3332 ] [60])
+        (zero_extend:SI (reg:QI 0 ax [orig:59 D.3331 ] [59]))) malloc.c:112 145 {*zero_extendqisi2}
+     (expr_list:REG_DEAD (reg:QI 0 ax [orig:59 D.3331 ] [59])
+        (nil)))
+(insn 9 8 10 2 (set (reg:DI 0 ax [75])
+        (sign_extend:DI (reg:SI 0 ax [orig:60 D.3332 ] [60]))) malloc.c:112 149 {*extendsidi2_rex64}
+     (expr_list:REG_DEAD (reg:SI 0 ax [orig:60 D.3332 ] [60])
+        (nil)))
+(insn 10 9 11 2 (set (reg/f:DI 0 ax [orig:61 D.3333 ] [61])
+        (mem/f/j:DI (plus:DI (mult:DI (reg:DI 0 ax [75])
+                    (const_int 8 [0x8]))
+                (symbol_ref:DI ("free_list") [flags 0x2]  <var_decl 0x7f448319eab0 free_list>)) [0 free_list S8 A64])) malloc.c:112 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 0 ax [75])
+        (nil)))
+(insn 11 10 12 2 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg/f:DI 0 ax [orig:61 D.3333 ] [61])
+            (const_int 0 [0]))) malloc.c:112 4 {*cmpdi_ccno_1}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [orig:61 D.3333 ] [61])
+        (nil)))
+(jump_insn 12 11 13 2 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 36)
+            (pc))) malloc.c:112 621 {*jcc_1}
+     (expr_list:REG_DEAD (reg:CCZ 17 flags)
+        (nil))
+ -> 36)
+(note 13 12 14 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+(insn 14 13 15 3 (set (reg/f:DI 0 ax [76])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 current+0 S8 A64])) malloc.c:113 87 {*movdi_internal_rex64}
+     (nil))
+(insn 15 14 16 3 (set (reg:QI 0 ax [orig:62 D.3331 ] [62])
+        (mem/j:QI (plus:DI (reg/f:DI 0 ax [76])
+                (const_int 1 [0x1])) [0 current_1(D)->kval+0 S1 A8])) malloc.c:113 91 {*movqi_internal}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [76])
+        (nil)))
+(insn 16 15 17 3 (set (reg:SI 0 ax [orig:63 D.3332 ] [63])
+        (zero_extend:SI (reg:QI 0 ax [orig:62 D.3331 ] [62]))) malloc.c:113 145 {*zero_extendqisi2}
+     (expr_list:REG_DEAD (reg:QI 0 ax [orig:62 D.3331 ] [62])
+        (nil)))
+(insn 17 16 18 3 (set (reg:DI 0 ax [77])
+        (sign_extend:DI (reg:SI 0 ax [orig:63 D.3332 ] [63]))) malloc.c:113 149 {*extendsidi2_rex64}
+     (expr_list:REG_DEAD (reg:SI 0 ax [orig:63 D.3332 ] [63])
+        (nil)))
+(insn 18 17 19 3 (set (reg/f:DI 1 dx [orig:64 D.3333 ] [64])
+        (mem/f/j:DI (plus:DI (mult:DI (reg:DI 0 ax [77])
+                    (const_int 8 [0x8]))
+                (symbol_ref:DI ("free_list") [flags 0x2]  <var_decl 0x7f448319eab0 free_list>)) [0 free_list S8 A64])) malloc.c:113 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 0 ax [77])
+        (nil)))
+(insn 19 18 20 3 (set (reg/f:DI 0 ax [78])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 current+0 S8 A64])) malloc.c:113 87 {*movdi_internal_rex64}
+     (nil))
+(insn 20 19 21 3 (set (mem/f/j:DI (plus:DI (reg/f:DI 0 ax [78])
+                (const_int 8 [0x8])) [0 current_1(D)->succ+0 S8 A64])
+        (reg/f:DI 1 dx [orig:64 D.3333 ] [64])) malloc.c:113 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [78])
+        (expr_list:REG_DEAD (reg/f:DI 1 dx [orig:64 D.3333 ] [64])
+            (nil))))
+(insn 21 20 22 3 (set (reg/f:DI 0 ax [79])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 current+0 S8 A64])) malloc.c:114 87 {*movdi_internal_rex64}
+     (nil))
+(insn 22 21 23 3 (set (reg:QI 0 ax [orig:65 D.3331 ] [65])
+        (mem/j:QI (plus:DI (reg/f:DI 0 ax [79])
+                (const_int 1 [0x1])) [0 current_1(D)->kval+0 S1 A8])) malloc.c:114 91 {*movqi_internal}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [79])
+        (nil)))
+(insn 23 22 24 3 (set (reg:SI 0 ax [orig:66 D.3332 ] [66])
+        (zero_extend:SI (reg:QI 0 ax [orig:65 D.3331 ] [65]))) malloc.c:114 145 {*zero_extendqisi2}
+     (expr_list:REG_DEAD (reg:QI 0 ax [orig:65 D.3331 ] [65])
+        (nil)))
+(insn 24 23 25 3 (set (reg:DI 0 ax [80])
+        (sign_extend:DI (reg:SI 0 ax [orig:66 D.3332 ] [66]))) malloc.c:114 149 {*extendsidi2_rex64}
+     (expr_list:REG_DEAD (reg:SI 0 ax [orig:66 D.3332 ] [66])
+        (nil)))
+(insn 25 24 26 3 (set (reg/f:DI 0 ax [orig:67 D.3333 ] [67])
+        (mem/f/j:DI (plus:DI (mult:DI (reg:DI 0 ax [80])
+                    (const_int 8 [0x8]))
+                (symbol_ref:DI ("free_list") [flags 0x2]  <var_decl 0x7f448319eab0 free_list>)) [0 free_list S8 A64])) malloc.c:114 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 0 ax [80])
+        (nil)))
+(insn 26 25 27 3 (set (reg/f:DI 1 dx [orig:68 D.3333 ] [68])
+        (mem/f/j:DI (plus:DI (reg/f:DI 0 ax [orig:67 D.3333 ] [67])
+                (const_int 16 [0x10])) [0 _10->pred+0 S8 A64])) malloc.c:114 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [orig:67 D.3333 ] [67])
+        (nil)))
+(insn 27 26 28 3 (set (reg/f:DI 0 ax [81])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 current+0 S8 A64])) malloc.c:114 87 {*movdi_internal_rex64}
+     (nil))
+(insn 28 27 29 3 (set (mem/f/j:DI (plus:DI (reg/f:DI 0 ax [81])
+                (const_int 16 [0x10])) [0 current_1(D)->pred+0 S8 A64])
+        (reg/f:DI 1 dx [orig:68 D.3333 ] [68])) malloc.c:114 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [81])
+        (expr_list:REG_DEAD (reg/f:DI 1 dx [orig:68 D.3333 ] [68])
+            (nil))))
+(insn 29 28 30 3 (set (reg/f:DI 0 ax [82])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 current+0 S8 A64])) malloc.c:115 87 {*movdi_internal_rex64}
+     (nil))
+(insn 30 29 31 3 (set (reg:QI 0 ax [orig:69 D.3331 ] [69])
+        (mem/j:QI (plus:DI (reg/f:DI 0 ax [82])
+                (const_int 1 [0x1])) [0 current_1(D)->kval+0 S1 A8])) malloc.c:115 91 {*movqi_internal}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [82])
+        (nil)))
+(insn 31 30 32 3 (set (reg:SI 0 ax [orig:70 D.3332 ] [70])
+        (zero_extend:SI (reg:QI 0 ax [orig:69 D.3331 ] [69]))) malloc.c:115 145 {*zero_extendqisi2}
+     (expr_list:REG_DEAD (reg:QI 0 ax [orig:69 D.3331 ] [69])
+        (nil)))
+(insn 32 31 33 3 (set (reg:DI 0 ax [83])
+        (sign_extend:DI (reg:SI 0 ax [orig:70 D.3332 ] [70]))) malloc.c:115 149 {*extendsidi2_rex64}
+     (expr_list:REG_DEAD (reg:SI 0 ax [orig:70 D.3332 ] [70])
+        (nil)))
+(insn 33 32 34 3 (set (reg/f:DI 0 ax [orig:71 D.3333 ] [71])
+        (mem/f/j:DI (plus:DI (mult:DI (reg:DI 0 ax [83])
+                    (const_int 8 [0x8]))
+                (symbol_ref:DI ("free_list") [flags 0x2]  <var_decl 0x7f448319eab0 free_list>)) [0 free_list S8 A64])) malloc.c:115 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 0 ax [83])
+        (nil)))
+(insn 34 33 35 3 (set (reg/f:DI 1 dx [84])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 current+0 S8 A64])) malloc.c:115 87 {*movdi_internal_rex64}
+     (nil))
+(insn 35 34 36 3 (set (mem/f/j:DI (plus:DI (reg/f:DI 0 ax [orig:71 D.3333 ] [71])
+                (const_int 16 [0x10])) [0 _14->pred+0 S8 A64])
+        (reg/f:DI 1 dx [84])) malloc.c:115 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg/f:DI 1 dx [84])
+        (expr_list:REG_DEAD (reg/f:DI 0 ax [orig:71 D.3333 ] [71])
+            (nil))))
+(code_label 36 35 37 4 22 "" [1 uses])
+(note 37 36 38 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 38 37 39 4 (set (reg/f:DI 0 ax [85])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 current+0 S8 A64])) malloc.c:117 87 {*movdi_internal_rex64}
+     (nil))
+(insn 39 38 40 4 (set (reg:QI 0 ax [orig:72 D.3331 ] [72])
+        (mem/j:QI (plus:DI (reg/f:DI 0 ax [85])
+                (const_int 1 [0x1])) [0 current_1(D)->kval+0 S1 A8])) malloc.c:117 91 {*movqi_internal}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [85])
+        (nil)))
+(insn 40 39 41 4 (set (reg:SI 0 ax [orig:73 D.3332 ] [73])
+        (zero_extend:SI (reg:QI 0 ax [orig:72 D.3331 ] [72]))) malloc.c:117 145 {*zero_extendqisi2}
+     (expr_list:REG_DEAD (reg:QI 0 ax [orig:72 D.3331 ] [72])
+        (nil)))
+(insn 41 40 42 4 (set (reg:DI 0 ax [86])
+        (sign_extend:DI (reg:SI 0 ax [orig:73 D.3332 ] [73]))) malloc.c:117 149 {*extendsidi2_rex64}
+     (expr_list:REG_DEAD (reg:SI 0 ax [orig:73 D.3332 ] [73])
+        (nil)))
+(insn 42 41 43 4 (set (reg/f:DI 1 dx [87])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 current+0 S8 A64])) malloc.c:117 87 {*movdi_internal_rex64}
+     (nil))
+(insn 43 42 50 4 (set (mem/f/j:DI (plus:DI (mult:DI (reg:DI 0 ax [86])
+                    (const_int 8 [0x8]))
+                (symbol_ref:DI ("free_list") [flags 0x2]  <var_decl 0x7f448319eab0 free_list>)) [0 free_list S8 A64])
+        (reg/f:DI 1 dx [87])) malloc.c:117 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg/f:DI 1 dx [87])
+        (expr_list:REG_DEAD (reg:DI 0 ax [86])
+            (nil))))
+(note 50 43 51 4 NOTE_INSN_EPILOGUE_BEG)
+(insn 51 50 52 4 (set (mem/v:BLK (scratch:DI) [0 A8])
+        (unspec:BLK [
+                (mem/v:BLK (scratch:DI) [0 A8])
+            ] UNSPEC_MEMORY_BLOCKAGE)) malloc.c:118 -1
+     (nil))
+(insn/f 52 51 53 4 (set (reg/f:DI 6 bp)
+        (mem:DI (post_inc:DI (reg/f:DI 7 sp)) [0 S8 A8])) malloc.c:118 -1
+     (expr_list:REG_CFA_DEF_CFA (plus:DI (reg/f:DI 7 sp)
+            (const_int 8 [0x8]))
+        (nil)))
+(jump_insn 53 52 54 4 (simple_return) malloc.c:118 -1
+     (nil)
+ -> simple_return)
+(barrier 54 53 0)
+
+;; Function free_link (free_link, funcdef_no=6, decl_uid=3143, cgraph_uid=6)
+
+
+
+free_link
+
+Dataflow summary:
+;;  invalidated by call 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 8 [st] 9 [st(1)] 10 [st(2)] 11 [st(3)] 12 [st(4)] 13 [st(5)] 14 [st(6)] 15 [st(7)] 17 [flags] 18 [fpsr] 19 [fpcr] 21 [xmm0] 22 [xmm1] 23 [xmm2] 24 [xmm3] 25 [xmm4] 26 [xmm5] 27 [xmm6] 28 [xmm7] 29 [mm0] 30 [mm1] 31 [mm2] 32 [mm3] 33 [mm4] 34 [mm5] 35 [mm6] 36 [mm7] 37 [r8] 38 [r9] 39 [r10] 40 [r11] 45 [xmm8] 46 [xmm9] 47 [xmm10] 48 [xmm11] 49 [xmm12] 50 [xmm13] 51 [xmm14] 52 [xmm15]
+;;  hardware regs used 	 7 [sp]
+;;  regular block artificial uses 	 6 [bp] 7 [sp]
+;;  eh block artificial uses 	 6 [bp] 7 [sp] 16 [argp] 20 [frame]
+;;  entry block defs 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 6 [bp] 7 [sp] 20 [frame] 21 [xmm0] 22 [xmm1] 23 [xmm2] 24 [xmm3] 25 [xmm4] 26 [xmm5] 27 [xmm6] 28 [xmm7] 37 [r8] 38 [r9]
+;;  exit block uses 	 6 [bp] 7 [sp] 20 [frame]
+;;  regs ever live 	 0[ax] 1[dx] 2[cx] 5[di] 6[bp] 17[flags]
+;;  ref usage 	r0={18d,17u} r1={6d,5u} r2={2d,1u} r4={1d} r5={1d,1u} r6={3d,20u} r7={3d,11u} r17={3d,3u} r20={1d,1u} r21={1d} r22={1d} r23={1d} r24={1d} r25={1d} r26={1d} r27={1d} r28={1d} r37={1d} r38={1d} 
+;;    total ref usage 107{48d,59u,0e} in 39{39 regular + 0 call} insns.
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 49 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn/f 49 4 50 2 (set (mem:DI (pre_dec:DI (reg/f:DI 7 sp)) [0 S8 A8])
+        (reg/f:DI 6 bp)) malloc.c:121 -1
+     (nil))
+(insn/f 50 49 51 2 (set (reg/f:DI 6 bp)
+        (reg/f:DI 7 sp)) malloc.c:121 -1
+     (nil))
+(insn 51 50 52 2 (set (mem/v:BLK (scratch:DI) [0 A8])
+        (unspec:BLK [
+                (mem/v:BLK (scratch:DI) [0 A8])
+            ] UNSPEC_MEMORY_BLOCKAGE)) malloc.c:121 -1
+     (nil))
+(note 52 51 2 2 NOTE_INSN_PROLOGUE_END)
+(insn 2 52 3 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 current+0 S8 A64])
+        (reg:DI 5 di [ current ])) malloc.c:121 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 5 di [ current ])
+        (nil)))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(insn 6 3 7 2 (set (reg/f:DI 0 ax [71])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 current+0 S8 A64])) malloc.c:122 87 {*movdi_internal_rex64}
+     (nil))
+(insn 7 6 8 2 (set (reg:QI 0 ax [orig:59 D.3334 ] [59])
+        (mem/j:QI (plus:DI (reg/f:DI 0 ax [71])
+                (const_int 1 [0x1])) [0 current_1(D)->kval+0 S1 A8])) malloc.c:122 91 {*movqi_internal}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [71])
+        (nil)))
+(insn 8 7 9 2 (set (reg:SI 0 ax [orig:60 D.3335 ] [60])
+        (zero_extend:SI (reg:QI 0 ax [orig:59 D.3334 ] [59]))) malloc.c:122 145 {*zero_extendqisi2}
+     (expr_list:REG_DEAD (reg:QI 0 ax [orig:59 D.3334 ] [59])
+        (nil)))
+(insn 9 8 10 2 (set (reg:DI 0 ax [72])
+        (sign_extend:DI (reg:SI 0 ax [orig:60 D.3335 ] [60]))) malloc.c:122 149 {*extendsidi2_rex64}
+     (expr_list:REG_DEAD (reg:SI 0 ax [orig:60 D.3335 ] [60])
+        (nil)))
+(insn 10 9 11 2 (set (reg/f:DI 0 ax [orig:61 D.3336 ] [61])
+        (mem/f/j:DI (plus:DI (mult:DI (reg:DI 0 ax [72])
+                    (const_int 8 [0x8]))
+                (symbol_ref:DI ("free_list") [flags 0x2]  <var_decl 0x7f448319eab0 free_list>)) [0 free_list S8 A64])) malloc.c:122 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 0 ax [72])
+        (nil)))
+(insn 11 10 12 2 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg/f:DI 0 ax [orig:61 D.3336 ] [61])
+            (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                    (const_int -8 [0xfffffffffffffff8])) [0 current+0 S8 A64]))) malloc.c:122 8 {*cmpdi_1}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [orig:61 D.3336 ] [61])
+        (nil)))
+(jump_insn 12 11 13 2 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 21)
+            (pc))) malloc.c:122 621 {*jcc_1}
+     (expr_list:REG_DEAD (reg:CCZ 17 flags)
+        (nil))
+ -> 21)
+(note 13 12 14 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+(insn 14 13 15 3 (set (reg/f:DI 0 ax [73])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 current+0 S8 A64])) malloc.c:123 87 {*movdi_internal_rex64}
+     (nil))
+(insn 15 14 16 3 (set (reg:QI 0 ax [orig:62 D.3334 ] [62])
+        (mem/j:QI (plus:DI (reg/f:DI 0 ax [73])
+                (const_int 1 [0x1])) [0 current_1(D)->kval+0 S1 A8])) malloc.c:123 91 {*movqi_internal}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [73])
+        (nil)))
+(insn 16 15 17 3 (set (reg:SI 2 cx [orig:63 D.3335 ] [63])
+        (zero_extend:SI (reg:QI 0 ax [orig:62 D.3334 ] [62]))) malloc.c:123 145 {*zero_extendqisi2}
+     (expr_list:REG_DEAD (reg:QI 0 ax [orig:62 D.3334 ] [62])
+        (nil)))
+(insn 17 16 18 3 (set (reg/f:DI 0 ax [74])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 current+0 S8 A64])) malloc.c:123 87 {*movdi_internal_rex64}
+     (nil))
+(insn 18 17 19 3 (set (reg/f:DI 1 dx [orig:64 D.3336 ] [64])
+        (mem/f/j:DI (plus:DI (reg/f:DI 0 ax [74])
+                (const_int 8 [0x8])) [0 current_1(D)->succ+0 S8 A64])) malloc.c:123 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [74])
+        (nil)))
+(insn 19 18 20 3 (set (reg:DI 0 ax [75])
+        (sign_extend:DI (reg:SI 2 cx [orig:63 D.3335 ] [63]))) malloc.c:123 149 {*extendsidi2_rex64}
+     (expr_list:REG_DEAD (reg:SI 2 cx [orig:63 D.3335 ] [63])
+        (nil)))
+(insn 20 19 21 3 (set (mem/f/j:DI (plus:DI (mult:DI (reg:DI 0 ax [75])
+                    (const_int 8 [0x8]))
+                (symbol_ref:DI ("free_list") [flags 0x2]  <var_decl 0x7f448319eab0 free_list>)) [0 free_list S8 A64])
+        (reg/f:DI 1 dx [orig:64 D.3336 ] [64])) malloc.c:123 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 0 ax [75])
+        (expr_list:REG_DEAD (reg/f:DI 1 dx [orig:64 D.3336 ] [64])
+            (nil))))
+(code_label 21 20 22 4 24 "" [1 uses])
+(note 22 21 23 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 23 22 24 4 (set (reg/f:DI 0 ax [76])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 current+0 S8 A64])) malloc.c:125 87 {*movdi_internal_rex64}
+     (nil))
+(insn 24 23 25 4 (set (reg/f:DI 0 ax [orig:65 D.3336 ] [65])
+        (mem/f/j:DI (plus:DI (reg/f:DI 0 ax [76])
+                (const_int 8 [0x8])) [0 current_1(D)->succ+0 S8 A64])) malloc.c:125 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [76])
+        (nil)))
+(insn 25 24 26 4 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg/f:DI 0 ax [orig:65 D.3336 ] [65])
+            (const_int 0 [0]))) malloc.c:125 4 {*cmpdi_ccno_1}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [orig:65 D.3336 ] [65])
+        (nil)))
+(jump_insn 26 25 27 4 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 33)
+            (pc))) malloc.c:125 621 {*jcc_1}
+     (expr_list:REG_DEAD (reg:CCZ 17 flags)
+        (nil))
+ -> 33)
+(note 27 26 28 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 28 27 29 5 (set (reg/f:DI 0 ax [77])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 current+0 S8 A64])) malloc.c:126 87 {*movdi_internal_rex64}
+     (nil))
+(insn 29 28 30 5 (set (reg/f:DI 0 ax [orig:66 D.3336 ] [66])
+        (mem/f/j:DI (plus:DI (reg/f:DI 0 ax [77])
+                (const_int 8 [0x8])) [0 current_1(D)->succ+0 S8 A64])) malloc.c:126 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [77])
+        (nil)))
+(insn 30 29 31 5 (set (reg/f:DI 1 dx [78])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 current+0 S8 A64])) malloc.c:126 87 {*movdi_internal_rex64}
+     (nil))
+(insn 31 30 32 5 (set (reg/f:DI 1 dx [orig:67 D.3336 ] [67])
+        (mem/f/j:DI (plus:DI (reg/f:DI 1 dx [78])
+                (const_int 16 [0x10])) [0 current_1(D)->pred+0 S8 A64])) malloc.c:126 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg/f:DI 1 dx [78])
+        (nil)))
+(insn 32 31 33 5 (set (mem/f/j:DI (plus:DI (reg/f:DI 0 ax [orig:66 D.3336 ] [66])
+                (const_int 16 [0x10])) [0 _9->pred+0 S8 A64])
+        (reg/f:DI 1 dx [orig:67 D.3336 ] [67])) malloc.c:126 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg/f:DI 1 dx [orig:67 D.3336 ] [67])
+        (expr_list:REG_DEAD (reg/f:DI 0 ax [orig:66 D.3336 ] [66])
+            (nil))))
+(code_label 33 32 34 6 25 "" [1 uses])
+(note 34 33 35 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 35 34 36 6 (set (reg/f:DI 0 ax [79])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 current+0 S8 A64])) malloc.c:128 87 {*movdi_internal_rex64}
+     (nil))
+(insn 36 35 37 6 (set (reg/f:DI 0 ax [orig:68 D.3336 ] [68])
+        (mem/f/j:DI (plus:DI (reg/f:DI 0 ax [79])
+                (const_int 16 [0x10])) [0 current_1(D)->pred+0 S8 A64])) malloc.c:128 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [79])
+        (nil)))
+(insn 37 36 38 6 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg/f:DI 0 ax [orig:68 D.3336 ] [68])
+            (const_int 0 [0]))) malloc.c:128 4 {*cmpdi_ccno_1}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [orig:68 D.3336 ] [68])
+        (nil)))
+(jump_insn 38 37 39 6 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref:DI 47)
+            (pc))) malloc.c:128 621 {*jcc_1}
+     (expr_list:REG_DEAD (reg:CCZ 17 flags)
+        (nil))
+ -> 47)
+(note 39 38 40 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 40 39 41 7 (set (reg/f:DI 0 ax [80])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 current+0 S8 A64])) malloc.c:129 87 {*movdi_internal_rex64}
+     (nil))
+(insn 41 40 42 7 (set (reg/f:DI 0 ax [orig:69 D.3336 ] [69])
+        (mem/f/j:DI (plus:DI (reg/f:DI 0 ax [80])
+                (const_int 16 [0x10])) [0 current_1(D)->pred+0 S8 A64])) malloc.c:129 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [80])
+        (nil)))
+(insn 42 41 43 7 (set (reg/f:DI 1 dx [81])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 current+0 S8 A64])) malloc.c:129 87 {*movdi_internal_rex64}
+     (nil))
+(insn 43 42 44 7 (set (reg/f:DI 1 dx [orig:70 D.3336 ] [70])
+        (mem/f/j:DI (plus:DI (reg/f:DI 1 dx [81])
+                (const_int 8 [0x8])) [0 current_1(D)->succ+0 S8 A64])) malloc.c:129 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg/f:DI 1 dx [81])
+        (nil)))
+(insn 44 43 47 7 (set (mem/f/j:DI (plus:DI (reg/f:DI 0 ax [orig:69 D.3336 ] [69])
+                (const_int 8 [0x8])) [0 _12->succ+0 S8 A64])
+        (reg/f:DI 1 dx [orig:70 D.3336 ] [70])) malloc.c:129 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg/f:DI 1 dx [orig:70 D.3336 ] [70])
+        (expr_list:REG_DEAD (reg/f:DI 0 ax [orig:69 D.3336 ] [69])
+            (nil))))
+(code_label 47 44 48 8 23 "" [1 uses])
+(note 48 47 53 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(note 53 48 54 8 NOTE_INSN_EPILOGUE_BEG)
+(insn 54 53 55 8 (set (mem/v:BLK (scratch:DI) [0 A8])
+        (unspec:BLK [
+                (mem/v:BLK (scratch:DI) [0 A8])
+            ] UNSPEC_MEMORY_BLOCKAGE)) malloc.c:130 -1
+     (nil))
+(insn/f 55 54 56 8 (set (reg/f:DI 6 bp)
+        (mem:DI (post_inc:DI (reg/f:DI 7 sp)) [0 S8 A8])) malloc.c:130 -1
+     (expr_list:REG_CFA_DEF_CFA (plus:DI (reg/f:DI 7 sp)
+            (const_int 8 [0x8]))
+        (nil)))
+(jump_insn 56 55 57 8 (simple_return) malloc.c:130 -1
+     (nil)
+ -> simple_return)
+(barrier 57 56 0)
+
+;; Function merge (merge, funcdef_no=7, decl_uid=3147, cgraph_uid=7)
+
+
+
+merge
+
+Dataflow summary:
+;;  invalidated by call 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 8 [st] 9 [st(1)] 10 [st(2)] 11 [st(3)] 12 [st(4)] 13 [st(5)] 14 [st(6)] 15 [st(7)] 17 [flags] 18 [fpsr] 19 [fpcr] 21 [xmm0] 22 [xmm1] 23 [xmm2] 24 [xmm3] 25 [xmm4] 26 [xmm5] 27 [xmm6] 28 [xmm7] 29 [mm0] 30 [mm1] 31 [mm2] 32 [mm3] 33 [mm4] 34 [mm5] 35 [mm6] 36 [mm7] 37 [r8] 38 [r9] 39 [r10] 40 [r11] 45 [xmm8] 46 [xmm9] 47 [xmm10] 48 [xmm11] 49 [xmm12] 50 [xmm13] 51 [xmm14] 52 [xmm15]
+;;  hardware regs used 	 7 [sp]
+;;  regular block artificial uses 	 6 [bp] 7 [sp]
+;;  eh block artificial uses 	 6 [bp] 7 [sp] 16 [argp] 20 [frame]
+;;  entry block defs 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 6 [bp] 7 [sp] 20 [frame] 21 [xmm0] 22 [xmm1] 23 [xmm2] 24 [xmm3] 25 [xmm4] 26 [xmm5] 27 [xmm6] 28 [xmm7] 37 [r8] 38 [r9]
+;;  exit block uses 	 6 [bp] 7 [sp] 20 [frame]
+;;  regs ever live 	 4[si] 5[di] 6[bp]
+;;  ref usage 	r0={1d} r1={1d} r2={1d} r4={1d,1u} r5={1d,1u} r6={3d,5u} r7={3d,5u} r20={1d,1u} r21={1d} r22={1d} r23={1d} r24={1d} r25={1d} r26={1d} r27={1d} r28={1d} r37={1d} r38={1d} 
+;;    total ref usage 35{22d,13u,0e} in 8{8 regular + 0 call} insns.
+(note 1 0 5 NOTE_INSN_DELETED)
+(note 5 1 9 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn/f 9 5 10 2 (set (mem:DI (pre_dec:DI (reg/f:DI 7 sp)) [0 S8 A8])
+        (reg/f:DI 6 bp)) malloc.c:133 -1
+     (nil))
+(insn/f 10 9 11 2 (set (reg/f:DI 6 bp)
+        (reg/f:DI 7 sp)) malloc.c:133 -1
+     (nil))
+(insn 11 10 12 2 (set (mem/v:BLK (scratch:DI) [0 A8])
+        (unspec:BLK [
+                (mem/v:BLK (scratch:DI) [0 A8])
+            ] UNSPEC_MEMORY_BLOCKAGE)) malloc.c:133 -1
+     (nil))
+(note 12 11 2 2 NOTE_INSN_PROLOGUE_END)
+(insn 2 12 3 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 current+0 S8 A64])
+        (reg:DI 5 di [ current ])) malloc.c:133 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 5 di [ current ])
+        (nil)))
+(insn 3 2 4 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -16 [0xfffffffffffffff0])) [0 buddy+0 S8 A64])
+        (reg:DI 4 si [ buddy ])) malloc.c:133 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 4 si [ buddy ])
+        (nil)))
+(note 4 3 13 2 NOTE_INSN_FUNCTION_BEG)
+(note 13 4 14 2 NOTE_INSN_EPILOGUE_BEG)
+(insn 14 13 15 2 (set (mem/v:BLK (scratch:DI) [0 A8])
+        (unspec:BLK [
+                (mem/v:BLK (scratch:DI) [0 A8])
+            ] UNSPEC_MEMORY_BLOCKAGE)) malloc.c:141 -1
+     (nil))
+(insn/f 15 14 16 2 (set (reg/f:DI 6 bp)
+        (mem:DI (post_inc:DI (reg/f:DI 7 sp)) [0 S8 A8])) malloc.c:141 -1
+     (expr_list:REG_CFA_DEF_CFA (plus:DI (reg/f:DI 7 sp)
+            (const_int 8 [0x8]))
+        (nil)))
+(jump_insn 16 15 17 2 (simple_return) malloc.c:141 -1
+     (nil)
+ -> simple_return)
+(barrier 17 16 0)
+
+;; Function free (<unset-asm-name>, funcdef_no=8, decl_uid=916, cgraph_uid=8)
+
+
+
+free
+
+Dataflow summary:
+;;  invalidated by call 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 8 [st] 9 [st(1)] 10 [st(2)] 11 [st(3)] 12 [st(4)] 13 [st(5)] 14 [st(6)] 15 [st(7)] 17 [flags] 18 [fpsr] 19 [fpcr] 21 [xmm0] 22 [xmm1] 23 [xmm2] 24 [xmm3] 25 [xmm4] 26 [xmm5] 27 [xmm6] 28 [xmm7] 29 [mm0] 30 [mm1] 31 [mm2] 32 [mm3] 33 [mm4] 34 [mm5] 35 [mm6] 36 [mm7] 37 [r8] 38 [r9] 39 [r10] 40 [r11] 45 [xmm8] 46 [xmm9] 47 [xmm10] 48 [xmm11] 49 [xmm12] 50 [xmm13] 51 [xmm14] 52 [xmm15]
+;;  hardware regs used 	 7 [sp]
+;;  regular block artificial uses 	 6 [bp] 7 [sp]
+;;  eh block artificial uses 	 6 [bp] 7 [sp] 16 [argp] 20 [frame]
+;;  entry block defs 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 6 [bp] 7 [sp] 20 [frame] 21 [xmm0] 22 [xmm1] 23 [xmm2] 24 [xmm3] 25 [xmm4] 26 [xmm5] 27 [xmm6] 28 [xmm7] 37 [r8] 38 [r9]
+;;  exit block uses 	 6 [bp] 7 [sp] 20 [frame]
+;;  regs ever live 	 0[ax] 1[dx] 4[si] 5[di] 6[bp] 7[sp] 17[flags]
+;;  ref usage 	r0={23d,20u} r1={11d,6u} r2={5d} r4={8d,3u} r5={9d,5u} r6={3d,34u} r7={4d,21u} r8={4d} r9={4d} r10={4d} r11={4d} r12={4d} r13={4d} r14={4d} r15={4d} r17={13d,5u} r18={4d} r19={4d} r20={1d,1u,1e} r21={5d} r22={5d} r23={5d} r24={5d} r25={5d} r26={5d} r27={5d} r28={5d} r29={4d} r30={4d} r31={4d} r32={4d} r33={4d} r34={4d} r35={4d} r36={4d} r37={5d} r38={5d} r39={4d} r40={4d} r45={4d} r46={4d} r47={4d} r48={4d} r49={4d} r50={4d} r51={4d} r52={4d} 
+;;    total ref usage 335{239d,95u,1e} in 58{54 regular + 4 call} insns.
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 97 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn/f 97 4 98 2 (set (mem:DI (pre_dec:DI (reg/f:DI 7 sp)) [0 S8 A8])
+        (reg/f:DI 6 bp)) malloc.c:145 -1
+     (nil))
+(insn/f 98 97 99 2 (set (reg/f:DI 6 bp)
+        (reg/f:DI 7 sp)) malloc.c:145 -1
+     (nil))
+(insn/f 99 98 100 2 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 7 sp)
+                    (const_int -24 [0xffffffffffffffe8])))
+            (clobber (reg:CC 17 flags))
+            (clobber (mem:BLK (scratch) [0 A8]))
+        ]) malloc.c:145 -1
+     (nil))
+(note 100 99 2 2 NOTE_INSN_PROLOGUE_END)
+(insn 2 100 3 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [0 ptr+0 S8 A64])
+        (reg:DI 5 di [ ptr ])) malloc.c:145 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 5 di [ ptr ])
+        (nil)))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(insn 6 3 7 2 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                    (const_int -24 [0xffffffffffffffe8])) [0 ptr+0 S8 A64])
+            (const_int 0 [0]))) malloc.c:148 4 {*cmpdi_ccno_1}
+     (nil))
+(jump_insn 7 6 8 2 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 11)
+            (pc))) malloc.c:148 621 {*jcc_1}
+     (expr_list:REG_DEAD (reg:CCZ 17 flags)
+        (nil))
+ -> 11)
+(note 8 7 87 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 87 8 88 3 (set (pc)
+        (label_ref 85)) malloc.c:149 659 {jump}
+     (nil)
+ -> 85)
+(barrier 88 87 11)
+(code_label 11 88 12 4 29 "" [1 uses])
+(note 12 11 16 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 16 12 17 4 (set (reg/f:DI 0 ax [69])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [0 ptr+0 S8 A64])) malloc.c:151 87 {*movdi_internal_rex64}
+     (nil))
+(insn 17 16 18 4 (parallel [
+            (set (reg:DI 0 ax [68])
+                (plus:DI (reg/f:DI 0 ax [69])
+                    (const_int -24 [0xffffffffffffffe8])))
+            (clobber (reg:CC 17 flags))
+        ]) malloc.c:151 274 {*adddi_1}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [69])
+        (expr_list:REG_UNUSED (reg:CC 17 flags)
+            (expr_list:REG_EQUAL (plus:DI (mem/f/c:DI (plus:DI (reg/f:DI 20 frame)
+                            (const_int -24 [0xffffffffffffffe8])) [0 ptr+0 S8 A64])
+                    (const_int -24 [0xffffffffffffffe8]))
+                (nil)))))
+(insn 18 17 19 4 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -16 [0xfffffffffffffff0])) [0 current+0 S8 A64])
+        (reg:DI 0 ax [68])) malloc.c:151 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 0 ax [68])
+        (nil)))
+(insn 19 18 20 4 (set (reg/f:DI 0 ax [70])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -16 [0xfffffffffffffff0])) [0 current+0 S8 A64])) malloc.c:153 87 {*movdi_internal_rex64}
+     (nil))
+(insn 20 19 21 4 (set (reg:QI 0 ax [orig:59 D.3337 ] [59])
+        (mem/j:QI (plus:DI (reg/f:DI 0 ax [70])
+                (const_int 1 [0x1])) [0 current_2->kval+0 S1 A8])) malloc.c:153 91 {*movqi_internal}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [70])
+        (nil)))
+(insn 21 20 22 4 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:QI 0 ax [orig:59 D.3337 ] [59])
+            (const_int 24 [0x18]))) malloc.c:153 5 {*cmpqi_1}
+     (expr_list:REG_DEAD (reg:QI 0 ax [orig:59 D.3337 ] [59])
+        (nil)))
+(jump_insn 22 21 23 4 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 26)
+            (pc))) malloc.c:153 621 {*jcc_1}
+     (expr_list:REG_DEAD (reg:CCZ 17 flags)
+        (nil))
+ -> 26)
+(note 23 22 89 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 89 23 90 5 (set (pc)
+        (label_ref 85)) malloc.c:154 659 {jump}
+     (nil)
+ -> 85)
+(barrier 90 89 26)
+(code_label 26 90 27 6 31 "" [1 uses])
+(note 27 26 28 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 28 27 29 6 (set (reg/f:DI 0 ax [71])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -16 [0xfffffffffffffff0])) [0 current+0 S8 A64])) malloc.c:156 87 {*movdi_internal_rex64}
+     (nil))
+(insn 29 28 30 6 (set (reg:QI 0 ax [orig:60 D.3337 ] [60])
+        (mem/j:QI (plus:DI (reg/f:DI 0 ax [71])
+                (const_int 1 [0x1])) [0 current_2->kval+0 S1 A8])) malloc.c:156 91 {*movqi_internal}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [71])
+        (nil)))
+(insn 30 29 31 6 (set (reg:DI 1 dx [orig:61 D.3338 ] [61])
+        (zero_extend:DI (reg:QI 0 ax [orig:60 D.3337 ] [60]))) malloc.c:156 141 {zero_extendqidi2}
+     (expr_list:REG_DEAD (reg:QI 0 ax [orig:60 D.3337 ] [60])
+        (nil)))
+(insn 31 30 32 6 (set (reg:DI 0 ax [72])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -16 [0xfffffffffffffff0])) [0 current+0 S8 A64])) malloc.c:156 87 {*movdi_internal_rex64}
+     (nil))
+(insn 32 31 33 6 (set (reg:DI 4 si)
+        (reg:DI 1 dx [orig:61 D.3338 ] [61])) malloc.c:156 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 1 dx [orig:61 D.3338 ] [61])
+        (nil)))
+(insn 33 32 34 6 (set (reg:DI 5 di)
+        (reg:DI 0 ax [72])) malloc.c:156 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 0 ax [72])
+        (nil)))
+(call_insn 34 33 36 6 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("get_buddy") [flags 0x3]  <function_decl 0x7f44831d5500 get_buddy>) [0 get_buddy S1 A8])
+            (const_int 0 [0]))) malloc.c:156 672 {*call_value}
+     (expr_list:REG_DEAD (reg:DI 5 di)
+        (expr_list:REG_DEAD (reg:DI 4 si)
+            (nil)))
+    (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 5 di))
+        (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 4 si))
+            (nil))))
+(insn 36 34 37 6 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 buddy+0 S8 A64])
+        (reg:DI 0 ax [73])) malloc.c:156 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 0 ax [73])
+        (nil)))
+(insn 37 36 40 6 (set (reg/f:DI 0 ax [74])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -16 [0xfffffffffffffff0])) [0 current+0 S8 A64])) malloc.c:157 87 {*movdi_internal_rex64}
+     (nil))
+(insn 40 37 95 6 (set (reg:QI 1 dx [77])
+        (mem/j:QI (reg/f:DI 0 ax [74]) [0 current_2->reserved+0 S1 A64])) malloc.c:157 91 {*movqi_internal}
+     (nil))
+(insn 95 40 42 6 (parallel [
+            (set (reg:SI 1 dx [78])
+                (and:SI (reg:SI 1 dx [77])
+                    (const_int -2 [0xfffffffffffffffe])))
+            (clobber (reg:CC 17 flags))
+        ]) malloc.c:157 402 {*andsi_1}
+     (nil))
+(insn 42 95 43 6 (set (mem/j:QI (reg/f:DI 0 ax [74]) [0 current_2->reserved+0 S1 A64])
+        (reg:QI 1 dx [78])) malloc.c:157 91 {*movqi_internal}
+     (expr_list:REG_DEAD (reg:QI 1 dx [78])
+        (expr_list:REG_DEAD (reg/f:DI 0 ax [74])
+            (nil))))
+(insn 43 42 44 6 (set (reg/f:DI 0 ax [79])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 buddy+0 S8 A64])) malloc.c:158 87 {*movdi_internal_rex64}
+     (nil))
+(insn 44 43 96 6 (set (reg:QI 0 ax [orig:62 D.3337 ] [62])
+        (mem:QI (reg/f:DI 0 ax [79]) [0 *buddy_6+0 S1 A64])) malloc.c:158 91 {*movqi_internal}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [79])
+        (nil)))
+(insn 96 44 46 6 (parallel [
+            (set (reg:SI 0 ax [orig:63 D.3337 ] [63])
+                (and:SI (reg:SI 0 ax [orig:62 D.3337 ] [62])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) malloc.c:158 402 {*andsi_1}
+     (nil))
+(insn 46 96 47 6 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:QI 0 ax [orig:63 D.3337 ] [63])
+            (const_int 0 [0]))) malloc.c:158 1 {*cmpqi_ccno_1}
+     (expr_list:REG_DEAD (reg:QI 0 ax [orig:63 D.3337 ] [63])
+        (nil)))
+(jump_insn 47 46 48 6 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 78)
+            (pc))) malloc.c:158 621 {*jcc_1}
+     (expr_list:REG_DEAD (reg:CCZ 17 flags)
+        (nil))
+ -> 78)
+(note 48 47 49 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 49 48 50 7 (set (reg/f:DI 0 ax [80])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 buddy+0 S8 A64])) malloc.c:158 87 {*movdi_internal_rex64}
+     (nil))
+(insn 50 49 51 7 (set (reg:QI 1 dx [orig:64 D.3337 ] [64])
+        (mem/j:QI (plus:DI (reg/f:DI 0 ax [80])
+                (const_int 1 [0x1])) [0 buddy_6->kval+0 S1 A8])) malloc.c:158 91 {*movqi_internal}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [80])
+        (nil)))
+(insn 51 50 52 7 (set (reg/f:DI 0 ax [81])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -16 [0xfffffffffffffff0])) [0 current+0 S8 A64])) malloc.c:158 87 {*movdi_internal_rex64}
+     (nil))
+(insn 52 51 53 7 (set (reg:QI 0 ax [orig:65 D.3337 ] [65])
+        (mem/j:QI (plus:DI (reg/f:DI 0 ax [81])
+                (const_int 1 [0x1])) [0 current_2->kval+0 S1 A8])) malloc.c:158 91 {*movqi_internal}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [81])
+        (nil)))
+(insn 53 52 54 7 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:QI 1 dx [orig:64 D.3337 ] [64])
+            (reg:QI 0 ax [orig:65 D.3337 ] [65]))) malloc.c:158 5 {*cmpqi_1}
+     (expr_list:REG_DEAD (reg:QI 0 ax [orig:65 D.3337 ] [65])
+        (expr_list:REG_DEAD (reg:QI 1 dx [orig:64 D.3337 ] [64])
+            (nil))))
+(jump_insn 54 53 55 7 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 78)
+            (pc))) malloc.c:158 621 {*jcc_1}
+     (expr_list:REG_DEAD (reg:CCZ 17 flags)
+        (nil))
+ -> 78)
+(note 55 54 56 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 56 55 57 8 (set (reg/f:DI 0 ax [82])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -16 [0xfffffffffffffff0])) [0 current+0 S8 A64])) malloc.c:159 87 {*movdi_internal_rex64}
+     (nil))
+(insn 57 56 58 8 (set (reg:CC 17 flags)
+        (compare:CC (reg/f:DI 0 ax [82])
+            (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                    (const_int -8 [0xfffffffffffffff8])) [0 buddy+0 S8 A64]))) malloc.c:159 8 {*cmpdi_1}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [82])
+        (nil)))
+(jump_insn 58 57 59 8 (set (pc)
+        (if_then_else (geu (reg:CC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 67)
+            (pc))) malloc.c:159 621 {*jcc_1}
+     (expr_list:REG_DEAD (reg:CC 17 flags)
+        (nil))
+ -> 67)
+(note 59 58 60 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 60 59 61 9 (set (reg:DI 1 dx [83])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 buddy+0 S8 A64])) malloc.c:160 87 {*movdi_internal_rex64}
+     (nil))
+(insn 61 60 62 9 (set (reg:DI 0 ax [84])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -16 [0xfffffffffffffff0])) [0 current+0 S8 A64])) malloc.c:160 87 {*movdi_internal_rex64}
+     (nil))
+(insn 62 61 63 9 (set (reg:DI 4 si)
+        (reg:DI 1 dx [83])) malloc.c:160 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 1 dx [83])
+        (nil)))
+(insn 63 62 64 9 (set (reg:DI 5 di)
+        (reg:DI 0 ax [84])) malloc.c:160 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 0 ax [84])
+        (nil)))
+(call_insn 64 63 91 9 (call (mem:QI (symbol_ref:DI ("merge") [flags 0x3]  <function_decl 0x7f44831d5c00 merge>) [0 merge S1 A8])
+        (const_int 0 [0])) malloc.c:160 665 {*call}
+     (expr_list:REG_DEAD (reg:DI 5 di)
+        (expr_list:REG_DEAD (reg:DI 4 si)
+            (nil)))
+    (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 5 di))
+        (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 4 si))
+            (nil))))
+(jump_insn 91 64 92 9 (set (pc)
+        (label_ref 85)) malloc.c:159 659 {jump}
+     (nil)
+ -> 85)
+(barrier 92 91 67)
+(code_label 67 92 68 10 33 "" [1 uses])
+(note 68 67 69 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(insn 69 68 70 10 (set (reg:DI 1 dx [85])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -16 [0xfffffffffffffff0])) [0 current+0 S8 A64])) malloc.c:162 87 {*movdi_internal_rex64}
+     (nil))
+(insn 70 69 71 10 (set (reg:DI 0 ax [86])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 buddy+0 S8 A64])) malloc.c:162 87 {*movdi_internal_rex64}
+     (nil))
+(insn 71 70 72 10 (set (reg:DI 4 si)
+        (reg:DI 1 dx [85])) malloc.c:162 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 1 dx [85])
+        (nil)))
+(insn 72 71 73 10 (set (reg:DI 5 di)
+        (reg:DI 0 ax [86])) malloc.c:162 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 0 ax [86])
+        (nil)))
+(call_insn 73 72 93 10 (call (mem:QI (symbol_ref:DI ("merge") [flags 0x3]  <function_decl 0x7f44831d5c00 merge>) [0 merge S1 A8])
+        (const_int 0 [0])) malloc.c:162 665 {*call}
+     (expr_list:REG_DEAD (reg:DI 5 di)
+        (expr_list:REG_DEAD (reg:DI 4 si)
+            (nil)))
+    (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 5 di))
+        (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 4 si))
+            (nil))))
+(jump_insn 93 73 94 10 (set (pc)
+        (label_ref 85)) malloc.c:159 659 {jump}
+     (nil)
+ -> 85)
+(barrier 94 93 78)
+(code_label 78 94 79 11 32 "" [2 uses])
+(note 79 78 80 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(insn 80 79 81 11 (set (reg:DI 0 ax [87])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -16 [0xfffffffffffffff0])) [0 current+0 S8 A64])) malloc.c:165 87 {*movdi_internal_rex64}
+     (nil))
+(insn 81 80 82 11 (set (reg:DI 5 di)
+        (reg:DI 0 ax [87])) malloc.c:165 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 0 ax [87])
+        (nil)))
+(call_insn 82 81 85 11 (call (mem:QI (symbol_ref:DI ("push_block") [flags 0x3]  <function_decl 0x7f44831d5a00 push_block>) [0 push_block S1 A8])
+        (const_int 0 [0])) malloc.c:165 665 {*call}
+     (expr_list:REG_DEAD (reg:DI 5 di)
+        (nil))
+    (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 5 di))
+        (nil)))
+(code_label 85 82 86 12 28 "" [4 uses])
+(note 86 85 101 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+(note 101 86 102 12 NOTE_INSN_EPILOGUE_BEG)
+(insn/f 102 101 103 12 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 6 bp)
+                    (const_int 8 [0x8])))
+            (set (reg/f:DI 6 bp)
+                (mem:DI (reg/f:DI 6 bp) [0 S8 A8]))
+            (clobber (mem:BLK (scratch) [0 A8]))
+        ]) malloc.c:168 -1
+     (expr_list:REG_CFA_DEF_CFA (plus:DI (reg/f:DI 7 sp)
+            (const_int 8 [0x8]))
+        (nil)))
+(jump_insn 103 102 104 12 (simple_return) malloc.c:168 -1
+     (nil)
+ -> simple_return)
+(barrier 104 103 0)
+
+;; Function calloc (<unset-asm-name>, funcdef_no=9, decl_uid=863, cgraph_uid=9)
+
+
+
+calloc
+
+Dataflow summary:
+;;  invalidated by call 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 8 [st] 9 [st(1)] 10 [st(2)] 11 [st(3)] 12 [st(4)] 13 [st(5)] 14 [st(6)] 15 [st(7)] 17 [flags] 18 [fpsr] 19 [fpcr] 21 [xmm0] 22 [xmm1] 23 [xmm2] 24 [xmm3] 25 [xmm4] 26 [xmm5] 27 [xmm6] 28 [xmm7] 29 [mm0] 30 [mm1] 31 [mm2] 32 [mm3] 33 [mm4] 34 [mm5] 35 [mm6] 36 [mm7] 37 [r8] 38 [r9] 39 [r10] 40 [r11] 45 [xmm8] 46 [xmm9] 47 [xmm10] 48 [xmm11] 49 [xmm12] 50 [xmm13] 51 [xmm14] 52 [xmm15]
+;;  hardware regs used 	 7 [sp]
+;;  regular block artificial uses 	 6 [bp] 7 [sp]
+;;  eh block artificial uses 	 6 [bp] 7 [sp] 16 [argp] 20 [frame]
+;;  entry block defs 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 6 [bp] 7 [sp] 20 [frame] 21 [xmm0] 22 [xmm1] 23 [xmm2] 24 [xmm3] 25 [xmm4] 26 [xmm5] 27 [xmm6] 28 [xmm7] 37 [r8] 38 [r9]
+;;  exit block uses 	 0 [ax] 6 [bp] 7 [sp] 20 [frame]
+;;  regs ever live 	 0[ax] 1[dx] 4[si] 5[di] 6[bp] 7[sp] 17[flags]
+;;  ref usage 	r0={10d,8u} r1={4d,1u} r2={3d} r4={4d,2u} r5={5d,3u} r6={3d,18u} r7={4d,12u} r8={2d} r9={2d} r10={2d} r11={2d} r12={2d} r13={2d} r14={2d} r15={2d} r17={6d,1u} r18={2d} r19={2d} r20={1d,1u} r21={3d} r22={3d} r23={3d} r24={3d} r25={3d} r26={3d} r27={3d} r28={3d} r29={2d} r30={2d} r31={2d} r32={2d} r33={2d} r34={2d} r35={2d} r36={2d} r37={3d} r38={3d} r39={2d} r40={2d} r45={2d} r46={2d} r47={2d} r48={2d} r49={2d} r50={2d} r51={2d} r52={2d} 
+;;    total ref usage 172{126d,46u,0e} in 25{23 regular + 2 call} insns.
+(note 1 0 5 NOTE_INSN_DELETED)
+(note 5 1 45 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn/f 45 5 46 2 (set (mem:DI (pre_dec:DI (reg/f:DI 7 sp)) [0 S8 A8])
+        (reg/f:DI 6 bp)) malloc.c:170 -1
+     (nil))
+(insn/f 46 45 47 2 (set (reg/f:DI 6 bp)
+        (reg/f:DI 7 sp)) malloc.c:170 -1
+     (nil))
+(insn/f 47 46 48 2 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 7 sp)
+                    (const_int -32 [0xffffffffffffffe0])))
+            (clobber (reg:CC 17 flags))
+            (clobber (mem:BLK (scratch) [0 A8]))
+        ]) malloc.c:170 -1
+     (nil))
+(note 48 47 2 2 NOTE_INSN_PROLOGUE_END)
+(insn 2 48 3 2 (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [0 number+0 S8 A64])
+        (reg:DI 5 di [ number ])) malloc.c:170 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 5 di [ number ])
+        (nil)))
+(insn 3 2 4 2 (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -32 [0xffffffffffffffe0])) [0 size+0 S8 A64])
+        (reg:DI 4 si [ size ])) malloc.c:170 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 4 si [ size ])
+        (nil)))
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+(insn 7 4 8 2 (set (reg:DI 0 ax [63])
+        (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [0 number+0 S8 A64])) malloc.c:172 87 {*movdi_internal_rex64}
+     (nil))
+(insn 8 7 9 2 (parallel [
+            (set (reg:DI 0 ax [orig:60 D.3340 ] [60])
+                (mult:DI (reg:DI 0 ax [63])
+                    (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                            (const_int -32 [0xffffffffffffffe0])) [0 size+0 S8 A64])))
+            (clobber (reg:CC 17 flags))
+        ]) malloc.c:172 354 {*muldi3_1}
+     (expr_list:REG_DEAD (reg:DI 0 ax [63])
+        (nil)))
+(insn 9 8 10 2 (set (reg:DI 5 di)
+        (reg:DI 0 ax [orig:60 D.3340 ] [60])) malloc.c:172 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 0 ax [orig:60 D.3340 ] [60])
+        (nil)))
+(call_insn 10 9 12 2 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("malloc") [flags 0x3]  <function_decl 0x7f448343e800 malloc>) [0 __builtin_malloc S1 A8])
+            (const_int 0 [0]))) malloc.c:172 672 {*call_value}
+     (expr_list:REG_DEAD (reg:DI 5 di)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 5 di))
+        (nil)))
+(insn 12 10 13 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 new+0 S8 A64])
+        (reg/f:DI 0 ax [64])) malloc.c:172 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [64])
+        (nil)))
+(insn 13 12 14 2 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                    (const_int -8 [0xfffffffffffffff8])) [0 new+0 S8 A64])
+            (const_int 0 [0]))) malloc.c:173 4 {*cmpdi_ccno_1}
+     (nil))
+(jump_insn 14 13 15 2 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 19)
+            (pc))) malloc.c:173 621 {*jcc_1}
+     (nil)
+ -> 19)
+(note 15 14 16 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+(insn 16 15 41 3 (set (reg/f:DI 0 ax [orig:59 D.3339 ] [59])
+        (const_int 0 [0])) malloc.c:173 87 {*movdi_internal_rex64}
+     (nil))
+(jump_insn 41 16 42 3 (set (pc)
+        (label_ref 29)) malloc.c:173 659 {jump}
+     (nil)
+ -> 29)
+(barrier 42 41 19)
+(code_label 19 42 20 4 36 "" [1 uses])
+(note 20 19 21 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 21 20 22 4 (set (reg:DI 0 ax [65])
+        (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [0 number+0 S8 A64])) malloc.c:174 87 {*movdi_internal_rex64}
+     (nil))
+(insn 22 21 44 4 (parallel [
+            (set (reg:DI 0 ax [orig:61 D.3340 ] [61])
+                (mult:DI (reg:DI 0 ax [orig:61 D.3340 ] [61])
+                    (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                            (const_int -32 [0xffffffffffffffe0])) [0 size+0 S8 A64])))
+            (clobber (reg:CC 17 flags))
+        ]) malloc.c:174 354 {*muldi3_1}
+     (nil))
+(insn 44 22 23 4 (set (reg:DI 1 dx [orig:61 D.3340 ] [61])
+        (reg:DI 0 ax [orig:61 D.3340 ] [61])) malloc.c:174 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 0 ax [orig:61 D.3340 ] [61])
+        (nil)))
+(insn 23 44 25 4 (set (reg:DI 0 ax [66])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 new+0 S8 A64])) malloc.c:174 87 {*movdi_internal_rex64}
+     (nil))
+(insn 25 23 26 4 (set (reg:SI 4 si)
+        (const_int 0 [0])) malloc.c:174 89 {*movsi_internal}
+     (nil))
+(insn 26 25 27 4 (set (reg:DI 5 di)
+        (reg:DI 0 ax [66])) malloc.c:174 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 0 ax [66])
+        (nil)))
+(call_insn 27 26 28 4 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("memset") [flags 0x41]  <function_decl 0x7f4483412c00 memset>) [0 __builtin_memset S1 A8])
+            (const_int 0 [0]))) malloc.c:174 672 {*call_value}
+     (expr_list:REG_DEAD (reg:DI 5 di)
+        (expr_list:REG_DEAD (reg:SI 4 si)
+            (expr_list:REG_DEAD (reg:DI 1 dx)
+                (expr_list:REG_UNUSED (reg:DI 0 ax)
+                    (expr_list:REG_EH_REGION (const_int 0 [0])
+                        (nil))))))
+    (expr_list:REG_FRAME_RELATED_EXPR (set (reg:DI 0 ax)
+            (reg:DI 5 di))
+        (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 5 di))
+            (expr_list:REG_BR_PRED (use (reg:SI 4 si))
+                (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 1 dx))
+                    (nil))))))
+(insn 28 27 29 4 (set (reg/f:DI 0 ax [orig:59 D.3339 ] [59])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 new+0 S8 A64])) malloc.c:175 87 {*movdi_internal_rex64}
+     (nil))
+(code_label 29 28 30 5 37 "" [1 uses])
+(note 30 29 38 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 38 30 49 5 (use (reg/i:DI 0 ax)) malloc.c:176 -1
+     (nil))
+(note 49 38 50 5 NOTE_INSN_EPILOGUE_BEG)
+(insn/f 50 49 51 5 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 6 bp)
+                    (const_int 8 [0x8])))
+            (set (reg/f:DI 6 bp)
+                (mem:DI (reg/f:DI 6 bp) [0 S8 A8]))
+            (clobber (mem:BLK (scratch) [0 A8]))
+        ]) malloc.c:176 -1
+     (expr_list:REG_CFA_DEF_CFA (plus:DI (reg/f:DI 7 sp)
+            (const_int 8 [0x8]))
+        (nil)))
+(jump_insn 51 50 52 5 (simple_return) malloc.c:176 -1
+     (nil)
+ -> simple_return)
+(barrier 52 51 0)
+
+;; Function realloc (<unset-asm-name>, funcdef_no=10, decl_uid=987, cgraph_uid=10)
+
+
+
+realloc
+
+Dataflow summary:
+;;  invalidated by call 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 8 [st] 9 [st(1)] 10 [st(2)] 11 [st(3)] 12 [st(4)] 13 [st(5)] 14 [st(6)] 15 [st(7)] 17 [flags] 18 [fpsr] 19 [fpcr] 21 [xmm0] 22 [xmm1] 23 [xmm2] 24 [xmm3] 25 [xmm4] 26 [xmm5] 27 [xmm6] 28 [xmm7] 29 [mm0] 30 [mm1] 31 [mm2] 32 [mm3] 33 [mm4] 34 [mm5] 35 [mm6] 36 [mm7] 37 [r8] 38 [r9] 39 [r10] 40 [r11] 45 [xmm8] 46 [xmm9] 47 [xmm10] 48 [xmm11] 49 [xmm12] 50 [xmm13] 51 [xmm14] 52 [xmm15]
+;;  hardware regs used 	 7 [sp]
+;;  regular block artificial uses 	 6 [bp] 7 [sp]
+;;  eh block artificial uses 	 6 [bp] 7 [sp] 16 [argp] 20 [frame]
+;;  entry block defs 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 6 [bp] 7 [sp] 20 [frame] 21 [xmm0] 22 [xmm1] 23 [xmm2] 24 [xmm3] 25 [xmm4] 26 [xmm5] 27 [xmm6] 28 [xmm7] 37 [r8] 38 [r9]
+;;  exit block uses 	 0 [ax] 6 [bp] 7 [sp] 20 [frame]
+;;  regs ever live 	 0[ax] 1[dx] 2[cx] 4[si] 5[di] 6[bp] 7[sp] 17[flags]
+;;  ref usage 	r0={28d,21u} r1={11d,5u} r2={9d,3u} r4={7d,2u} r5={11d,6u} r6={3d,33u} r7={4d,21u} r8={5d} r9={5d} r10={5d} r11={5d} r12={5d} r13={5d} r14={5d} r15={5d} r17={15d,4u} r18={5d} r19={5d} r20={1d,1u,1e} r21={6d} r22={6d} r23={6d} r24={6d} r25={6d} r26={6d} r27={6d} r28={6d} r29={5d} r30={5d} r31={5d} r32={5d} r33={5d} r34={5d} r35={5d} r36={5d} r37={6d} r38={6d} r39={5d} r40={5d} r45={5d} r46={5d} r47={5d} r48={5d} r49={5d} r50={5d} r51={5d} r52={5d} 
+;;    total ref usage 386{289d,96u,1e} in 63{58 regular + 5 call} insns.
+(note 1 0 5 NOTE_INSN_DELETED)
+(note 5 1 109 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn/f 109 5 110 2 (set (mem:DI (pre_dec:DI (reg/f:DI 7 sp)) [0 S8 A8])
+        (reg/f:DI 6 bp)) malloc.c:179 -1
+     (nil))
+(insn/f 110 109 111 2 (set (reg/f:DI 6 bp)
+        (reg/f:DI 7 sp)) malloc.c:179 -1
+     (nil))
+(insn/f 111 110 112 2 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 7 sp)
+                    (const_int -32 [0xffffffffffffffe0])))
+            (clobber (reg:CC 17 flags))
+            (clobber (mem:BLK (scratch) [0 A8]))
+        ]) malloc.c:179 -1
+     (nil))
+(note 112 111 2 2 NOTE_INSN_PROLOGUE_END)
+(insn 2 112 3 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [0 src+0 S8 A64])
+        (reg:DI 5 di [ src ])) malloc.c:179 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 5 di [ src ])
+        (nil)))
+(insn 3 2 4 2 (set (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -32 [0xffffffffffffffe0])) [0 size+0 S8 A64])
+        (reg:DI 4 si [ size ])) malloc.c:179 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 4 si [ size ])
+        (nil)))
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+(insn 7 4 8 2 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                    (const_int -24 [0xffffffffffffffe8])) [0 src+0 S8 A64])
+            (const_int 0 [0]))) malloc.c:183 4 {*cmpdi_ccno_1}
+     (nil))
+(jump_insn 8 7 9 2 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 17)
+            (pc))) malloc.c:183 621 {*jcc_1}
+     (nil)
+ -> 17)
+(note 9 8 10 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+(insn 10 9 11 3 (set (reg:DI 0 ax [73])
+        (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -32 [0xffffffffffffffe0])) [0 size+0 S8 A64])) malloc.c:184 87 {*movdi_internal_rex64}
+     (nil))
+(insn 11 10 12 3 (set (reg:DI 5 di)
+        (reg:DI 0 ax [73])) malloc.c:184 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 0 ax [73])
+        (nil)))
+(call_insn 12 11 95 3 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("malloc") [flags 0x3]  <function_decl 0x7f448343e800 malloc>) [0 __builtin_malloc S1 A8])
+            (const_int 0 [0]))) malloc.c:184 672 {*call_value}
+     (expr_list:REG_DEAD (reg:DI 5 di)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 5 di))
+        (nil)))
+(jump_insn 95 12 96 3 (set (pc)
+        (label_ref 83)) malloc.c:184 659 {jump}
+     (nil)
+ -> 83)
+(barrier 96 95 17)
+(code_label 17 96 18 4 39 "" [1 uses])
+(note 18 17 22 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 22 18 23 4 (set (reg/f:DI 0 ax [78])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [0 src+0 S8 A64])) malloc.c:186 87 {*movdi_internal_rex64}
+     (nil))
+(insn 23 22 24 4 (parallel [
+            (set (reg:DI 0 ax [77])
+                (plus:DI (reg/f:DI 0 ax [78])
+                    (const_int -24 [0xffffffffffffffe8])))
+            (clobber (reg:CC 17 flags))
+        ]) malloc.c:186 274 {*adddi_1}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [78])
+        (expr_list:REG_EQUAL (plus:DI (mem/f/c:DI (plus:DI (reg/f:DI 20 frame)
+                        (const_int -24 [0xffffffffffffffe8])) [0 src+0 S8 A64])
+                (const_int -24 [0xffffffffffffffe8]))
+            (nil))))
+(insn 24 23 25 4 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -16 [0xfffffffffffffff0])) [0 b+0 S8 A64])
+        (reg:DI 0 ax [77])) malloc.c:186 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 0 ax [77])
+        (nil)))
+(insn 25 24 26 4 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                    (const_int -32 [0xffffffffffffffe0])) [0 size+0 S8 A64])
+            (const_int 0 [0]))) malloc.c:188 4 {*cmpdi_ccno_1}
+     (nil))
+(jump_insn 26 25 27 4 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 34)
+            (pc))) malloc.c:188 621 {*jcc_1}
+     (nil)
+ -> 34)
+(note 27 26 28 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 28 27 29 5 (set (reg:DI 0 ax [79])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [0 src+0 S8 A64])) malloc.c:189 87 {*movdi_internal_rex64}
+     (nil))
+(insn 29 28 30 5 (set (reg:DI 5 di)
+        (reg:DI 0 ax [79])) malloc.c:189 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 0 ax [79])
+        (nil)))
+(call_insn 30 29 31 5 (call (mem:QI (symbol_ref:DI ("free") [flags 0x3]  <function_decl 0x7f4483436d00 free>) [0 __builtin_free S1 A8])
+        (const_int 0 [0])) malloc.c:189 665 {*call}
+     (expr_list:REG_DEAD (reg:DI 5 di)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 5 di))
+        (nil)))
+(insn 31 30 97 5 (set (reg/f:DI 0 ax [orig:59 D.3341 ] [59])
+        (const_int 0 [0])) malloc.c:190 87 {*movdi_internal_rex64}
+     (nil))
+(jump_insn 97 31 98 5 (set (pc)
+        (label_ref 83)) malloc.c:190 659 {jump}
+     (nil)
+ -> 83)
+(barrier 98 97 34)
+(code_label 34 98 35 6 41 "" [1 uses])
+(note 35 34 36 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 36 35 37 6 (set (reg/f:DI 0 ax [80])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -16 [0xfffffffffffffff0])) [0 b+0 S8 A64])) malloc.c:193 87 {*movdi_internal_rex64}
+     (nil))
+(insn 37 36 38 6 (set (reg:QI 0 ax [orig:60 D.3342 ] [60])
+        (mem/j:QI (plus:DI (reg/f:DI 0 ax [80])
+                (const_int 1 [0x1])) [0 b_5->kval+0 S1 A8])) malloc.c:193 91 {*movqi_internal}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [80])
+        (nil)))
+(insn 38 37 39 6 (set (reg:SI 0 ax [orig:61 D.3343 ] [61])
+        (zero_extend:SI (reg:QI 0 ax [orig:60 D.3342 ] [60]))) malloc.c:193 145 {*zero_extendqisi2}
+     (expr_list:REG_DEAD (reg:QI 0 ax [orig:60 D.3342 ] [60])
+        (nil)))
+(insn 39 38 105 6 (set (reg:SI 1 dx [81])
+        (const_int 1 [0x1])) malloc.c:193 89 {*movsi_internal}
+     (nil))
+(insn 105 39 40 6 (set (reg:QI 2 cx [91])
+        (reg:QI 0 ax [orig:61 D.3343 ] [61])) malloc.c:193 91 {*movqi_internal}
+     (expr_list:REG_DEAD (reg:SI 0 ax [orig:61 D.3343 ] [61])
+        (nil)))
+(insn 40 105 104 6 (parallel [
+            (set (reg:SI 1 dx [orig:62 D.3343 ] [62])
+                (ashift:SI (reg:SI 1 dx [orig:62 D.3343 ] [62])
+                    (reg:QI 2 cx [91])))
+            (clobber (reg:CC 17 flags))
+        ]) malloc.c:193 521 {*ashlsi3_1}
+     (expr_list:REG_DEAD (reg:QI 2 cx [91])
+        (nil)))
+(insn 104 40 42 6 (set (reg:SI 0 ax [orig:62 D.3343 ] [62])
+        (reg:SI 1 dx [orig:62 D.3343 ] [62])) malloc.c:193 89 {*movsi_internal}
+     (expr_list:REG_DEAD (reg:SI 1 dx [orig:62 D.3343 ] [62])
+        (nil)))
+(insn 42 104 43 6 (set (reg:DI 0 ax [orig:64 D.3345 ] [64])
+        (zero_extend:DI (reg:SI 0 ax [orig:63 D.3344 ] [63]))) malloc.c:193 139 {*zero_extendsidi2_rex64}
+     (expr_list:REG_DEAD (reg:SI 0 ax [orig:63 D.3344 ] [63])
+        (nil)))
+(insn 43 42 44 6 (parallel [
+            (set (reg:DI 0 ax [orig:65 D.3345 ] [65])
+                (plus:DI (reg:DI 0 ax [orig:64 D.3345 ] [64])
+                    (const_int -24 [0xffffffffffffffe8])))
+            (clobber (reg:CC 17 flags))
+        ]) malloc.c:193 274 {*adddi_1}
+     (expr_list:REG_DEAD (reg:DI 0 ax [orig:64 D.3345 ] [64])
+        (nil)))
+(insn 44 43 45 6 (set (reg:CC 17 flags)
+        (compare:CC (reg:DI 0 ax [orig:65 D.3345 ] [65])
+            (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                    (const_int -32 [0xffffffffffffffe0])) [0 size+0 S8 A64]))) malloc.c:193 8 {*cmpdi_1}
+     (expr_list:REG_DEAD (reg:DI 0 ax [orig:65 D.3345 ] [65])
+        (nil)))
+(jump_insn 45 44 46 6 (set (pc)
+        (if_then_else (ltu (reg:CC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 50)
+            (pc))) malloc.c:193 621 {*jcc_1}
+     (nil)
+ -> 50)
+(note 46 45 47 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 47 46 99 7 (set (reg/f:DI 0 ax [orig:59 D.3341 ] [59])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [0 src+0 S8 A64])) malloc.c:194 87 {*movdi_internal_rex64}
+     (nil))
+(jump_insn 99 47 100 7 (set (pc)
+        (label_ref 83)) malloc.c:194 659 {jump}
+     (nil)
+ -> 83)
+(barrier 100 99 50)
+(code_label 50 100 51 8 42 "" [1 uses])
+(note 51 50 52 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 52 51 53 8 (set (reg:DI 0 ax [82])
+        (mem/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -32 [0xffffffffffffffe0])) [0 size+0 S8 A64])) malloc.c:196 87 {*movdi_internal_rex64}
+     (nil))
+(insn 53 52 54 8 (set (reg:DI 5 di)
+        (reg:DI 0 ax [82])) malloc.c:196 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 0 ax [82])
+        (nil)))
+(call_insn 54 53 56 8 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("malloc") [flags 0x3]  <function_decl 0x7f448343e800 malloc>) [0 __builtin_malloc S1 A8])
+            (const_int 0 [0]))) malloc.c:196 672 {*call_value}
+     (expr_list:REG_DEAD (reg:DI 5 di)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 5 di))
+        (nil)))
+(insn 56 54 57 8 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 dst+0 S8 A64])
+        (reg/f:DI 0 ax [83])) malloc.c:196 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [83])
+        (nil)))
+(insn 57 56 58 8 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                    (const_int -8 [0xfffffffffffffff8])) [0 dst+0 S8 A64])
+            (const_int 0 [0]))) malloc.c:197 4 {*cmpdi_ccno_1}
+     (nil))
+(jump_insn 58 57 59 8 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 63)
+            (pc))) malloc.c:197 621 {*jcc_1}
+     (nil)
+ -> 63)
+(note 59 58 60 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 60 59 101 9 (set (reg/f:DI 0 ax [orig:59 D.3341 ] [59])
+        (const_int 0 [0])) malloc.c:197 87 {*movdi_internal_rex64}
+     (nil))
+(jump_insn 101 60 102 9 (set (pc)
+        (label_ref 83)) malloc.c:197 659 {jump}
+     (nil)
+ -> 83)
+(barrier 102 101 63)
+(code_label 63 102 64 10 43 "" [1 uses])
+(note 64 63 65 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(insn 65 64 66 10 (set (reg/f:DI 0 ax [84])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -16 [0xfffffffffffffff0])) [0 b+0 S8 A64])) malloc.c:198 87 {*movdi_internal_rex64}
+     (nil))
+(insn 66 65 67 10 (set (reg:QI 0 ax [orig:66 D.3342 ] [66])
+        (mem/j:QI (plus:DI (reg/f:DI 0 ax [84])
+                (const_int 1 [0x1])) [0 b_5->kval+0 S1 A8])) malloc.c:198 91 {*movqi_internal}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [84])
+        (nil)))
+(insn 67 66 68 10 (set (reg:SI 0 ax [orig:67 D.3346 ] [67])
+        (zero_extend:SI (reg:QI 0 ax [orig:66 D.3342 ] [66]))) malloc.c:198 145 {*zero_extendqisi2}
+     (expr_list:REG_DEAD (reg:QI 0 ax [orig:66 D.3342 ] [66])
+        (nil)))
+(insn 68 67 70 10 (parallel [
+            (set (reg:SI 0 ax [orig:68 D.3346 ] [68])
+                (plus:SI (reg:SI 0 ax [orig:67 D.3346 ] [67])
+                    (const_int -24 [0xffffffffffffffe8])))
+            (clobber (reg:CC 17 flags))
+        ]) malloc.c:198 273 {*addsi_1}
+     (expr_list:REG_DEAD (reg:SI 0 ax [orig:67 D.3346 ] [67])
+        (nil)))
+(insn 70 68 108 10 (set (reg:SI 1 dx [85])
+        (const_int 1 [0x1])) malloc.c:198 89 {*movsi_internal}
+     (nil))
+(insn 108 70 71 10 (set (reg:QI 2 cx [93])
+        (reg:QI 0 ax [orig:69 D.3343 ] [69])) malloc.c:198 91 {*movqi_internal}
+     (expr_list:REG_DEAD (reg:SI 0 ax [orig:69 D.3343 ] [69])
+        (nil)))
+(insn 71 108 107 10 (parallel [
+            (set (reg:SI 1 dx [orig:70 D.3343 ] [70])
+                (ashift:SI (reg:SI 1 dx [orig:70 D.3343 ] [70])
+                    (reg:QI 2 cx [93])))
+            (clobber (reg:CC 17 flags))
+        ]) malloc.c:198 521 {*ashlsi3_1}
+     (expr_list:REG_DEAD (reg:QI 2 cx [93])
+        (nil)))
+(insn 107 71 72 10 (set (reg:SI 0 ax [orig:70 D.3343 ] [70])
+        (reg:SI 1 dx [orig:70 D.3343 ] [70])) malloc.c:198 89 {*movsi_internal}
+     (expr_list:REG_DEAD (reg:SI 1 dx [orig:70 D.3343 ] [70])
+        (nil)))
+(insn 72 107 73 10 (set (reg:DI 1 dx [orig:71 D.3345 ] [71])
+        (sign_extend:DI (reg:SI 0 ax [orig:70 D.3343 ] [70]))) malloc.c:198 149 {*extendsidi2_rex64}
+     (expr_list:REG_DEAD (reg:SI 0 ax [orig:70 D.3343 ] [70])
+        (nil)))
+(insn 73 72 74 10 (set (reg:DI 2 cx [86])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [0 src+0 S8 A64])) malloc.c:198 87 {*movdi_internal_rex64}
+     (nil))
+(insn 74 73 76 10 (set (reg:DI 0 ax [87])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 dst+0 S8 A64])) malloc.c:198 87 {*movdi_internal_rex64}
+     (nil))
+(insn 76 74 77 10 (set (reg:DI 4 si)
+        (reg:DI 2 cx [86])) malloc.c:198 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 2 cx [86])
+        (nil)))
+(insn 77 76 78 10 (set (reg:DI 5 di)
+        (reg:DI 0 ax [87])) malloc.c:198 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 0 ax [87])
+        (nil)))
+(call_insn 78 77 79 10 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("memcpy") [flags 0x41]  <function_decl 0x7f4483412600 memcpy>) [0 __builtin_memcpy S1 A8])
+            (const_int 0 [0]))) malloc.c:198 672 {*call_value}
+     (expr_list:REG_DEAD (reg:DI 5 di)
+        (expr_list:REG_DEAD (reg:DI 4 si)
+            (expr_list:REG_DEAD (reg:DI 1 dx)
+                (expr_list:REG_UNUSED (reg:DI 0 ax)
+                    (expr_list:REG_EH_REGION (const_int 0 [0])
+                        (nil))))))
+    (expr_list:REG_FRAME_RELATED_EXPR (set (reg:DI 0 ax)
+            (reg:DI 5 di))
+        (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 5 di))
+            (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 4 si))
+                (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 1 dx))
+                    (nil))))))
+(insn 79 78 80 10 (set (reg:DI 0 ax [88])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [0 src+0 S8 A64])) malloc.c:199 87 {*movdi_internal_rex64}
+     (nil))
+(insn 80 79 81 10 (set (reg:DI 5 di)
+        (reg:DI 0 ax [88])) malloc.c:199 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 0 ax [88])
+        (nil)))
+(call_insn 81 80 82 10 (call (mem:QI (symbol_ref:DI ("free") [flags 0x3]  <function_decl 0x7f4483436d00 free>) [0 __builtin_free S1 A8])
+        (const_int 0 [0])) malloc.c:199 665 {*call}
+     (expr_list:REG_DEAD (reg:DI 5 di)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 5 di))
+        (nil)))
+(insn 82 81 83 10 (set (reg/f:DI 0 ax [orig:59 D.3341 ] [59])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 dst+0 S8 A64])) malloc.c:200 87 {*movdi_internal_rex64}
+     (nil))
+(code_label 83 82 84 11 40 "" [4 uses])
+(note 84 83 92 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(insn 92 84 113 11 (use (reg/i:DI 0 ax)) malloc.c:201 -1
+     (nil))
+(note 113 92 114 11 NOTE_INSN_EPILOGUE_BEG)
+(insn/f 114 113 115 11 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 6 bp)
+                    (const_int 8 [0x8])))
+            (set (reg/f:DI 6 bp)
+                (mem:DI (reg/f:DI 6 bp) [0 S8 A8]))
+            (clobber (mem:BLK (scratch) [0 A8]))
+        ]) malloc.c:201 -1
+     (expr_list:REG_CFA_DEF_CFA (plus:DI (reg/f:DI 7 sp)
+            (const_int 8 [0x8]))
+        (nil)))
+(jump_insn 115 114 116 11 (simple_return) malloc.c:201 -1
+     (nil)
+ -> simple_return)
+(barrier 116 115 0)
+
+;; Function main (main, funcdef_no=11, decl_uid=3166, cgraph_uid=11)
+
+
+
+main
+
+Dataflow summary:
+;;  invalidated by call 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 8 [st] 9 [st(1)] 10 [st(2)] 11 [st(3)] 12 [st(4)] 13 [st(5)] 14 [st(6)] 15 [st(7)] 17 [flags] 18 [fpsr] 19 [fpcr] 21 [xmm0] 22 [xmm1] 23 [xmm2] 24 [xmm3] 25 [xmm4] 26 [xmm5] 27 [xmm6] 28 [xmm7] 29 [mm0] 30 [mm1] 31 [mm2] 32 [mm3] 33 [mm4] 34 [mm5] 35 [mm6] 36 [mm7] 37 [r8] 38 [r9] 39 [r10] 40 [r11] 45 [xmm8] 46 [xmm9] 47 [xmm10] 48 [xmm11] 49 [xmm12] 50 [xmm13] 51 [xmm14] 52 [xmm15]
+;;  hardware regs used 	 7 [sp]
+;;  regular block artificial uses 	 6 [bp] 7 [sp]
+;;  eh block artificial uses 	 6 [bp] 7 [sp] 16 [argp] 20 [frame]
+;;  entry block defs 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 6 [bp] 7 [sp] 20 [frame] 21 [xmm0] 22 [xmm1] 23 [xmm2] 24 [xmm3] 25 [xmm4] 26 [xmm5] 27 [xmm6] 28 [xmm7] 37 [r8] 38 [r9]
+;;  exit block uses 	 0 [ax] 6 [bp] 7 [sp] 20 [frame]
+;;  regs ever live 	 0[ax] 4[si] 5[di] 6[bp] 7[sp]
+;;  ref usage 	r0={19d,14u} r1={12d} r2={12d} r4={14d,2u} r5={23d,11u} r6={3d,17u} r7={4d,18u} r8={11d} r9={11d} r10={11d} r11={11d} r12={11d} r13={11d} r14={11d} r15={11d} r17={12d} r18={11d} r19={11d} r20={1d,1u} r21={12d} r22={12d} r23={12d} r24={12d} r25={12d} r26={12d} r27={12d} r28={12d} r29={11d} r30={11d} r31={11d} r32={11d} r33={11d} r34={11d} r35={11d} r36={11d} r37={12d} r38={12d} r39={11d} r40={11d} r45={11d} r46={11d} r47={11d} r48={11d} r49={11d} r50={11d} r51={11d} r52={11d} 
+;;    total ref usage 591{528d,63u,0e} in 43{32 regular + 11 call} insns.
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 60 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn/f 60 3 61 2 (set (mem:DI (pre_dec:DI (reg/f:DI 7 sp)) [0 S8 A8])
+        (reg/f:DI 6 bp)) test.c:4 -1
+     (nil))
+(insn/f 61 60 62 2 (set (reg/f:DI 6 bp)
+        (reg/f:DI 7 sp)) test.c:4 -1
+     (nil))
+(insn/f 62 61 63 2 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 7 sp)
+                    (const_int -32 [0xffffffffffffffe0])))
+            (clobber (reg:CC 17 flags))
+            (clobber (mem:BLK (scratch) [0 A8]))
+        ]) test.c:4 -1
+     (nil))
+(note 63 62 2 2 NOTE_INSN_PROLOGUE_END)
+(note 2 63 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (set (reg:DI 5 di)
+        (const_int 70 [0x46])) test.c:5 87 {*movdi_internal_rex64}
+     (nil))
+(call_insn 6 5 8 2 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("malloc") [flags 0x3]  <function_decl 0x7f448343e800 malloc>) [0 __builtin_malloc S1 A8])
+            (const_int 0 [0]))) test.c:5 672 {*call_value}
+     (expr_list:REG_DEAD (reg:DI 5 di)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 5 di))
+        (nil)))
+(insn 8 6 9 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -32 [0xffffffffffffffe0])) [0 A+0 S8 A64])
+        (reg/f:DI 0 ax [61])) test.c:5 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [61])
+        (nil)))
+(insn 9 8 10 2 (set (reg:DI 5 di)
+        (const_int 35 [0x23])) test.c:6 87 {*movdi_internal_rex64}
+     (nil))
+(call_insn 10 9 12 2 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("malloc") [flags 0x3]  <function_decl 0x7f448343e800 malloc>) [0 __builtin_malloc S1 A8])
+            (const_int 0 [0]))) test.c:6 672 {*call_value}
+     (expr_list:REG_DEAD (reg:DI 5 di)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 5 di))
+        (nil)))
+(insn 12 10 13 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [0 B+0 S8 A64])
+        (reg/f:DI 0 ax [62])) test.c:6 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [62])
+        (nil)))
+(insn 13 12 14 2 (set (reg:DI 5 di)
+        (const_int 80 [0x50])) test.c:7 87 {*movdi_internal_rex64}
+     (nil))
+(call_insn 14 13 16 2 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("malloc") [flags 0x3]  <function_decl 0x7f448343e800 malloc>) [0 __builtin_malloc S1 A8])
+            (const_int 0 [0]))) test.c:7 672 {*call_value}
+     (expr_list:REG_DEAD (reg:DI 5 di)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 5 di))
+        (nil)))
+(insn 16 14 17 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -16 [0xfffffffffffffff0])) [0 C+0 S8 A64])
+        (reg/f:DI 0 ax [63])) test.c:7 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [63])
+        (nil)))
+(insn 17 16 18 2 (set (reg:DI 5 di)
+        (const_int 60 [0x3c])) test.c:8 87 {*movdi_internal_rex64}
+     (nil))
+(call_insn 18 17 20 2 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("malloc") [flags 0x3]  <function_decl 0x7f448343e800 malloc>) [0 __builtin_malloc S1 A8])
+            (const_int 0 [0]))) test.c:8 672 {*call_value}
+     (expr_list:REG_DEAD (reg:DI 5 di)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 5 di))
+        (nil)))
+(insn 20 18 21 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 D+0 S8 A64])
+        (reg/f:DI 0 ax [64])) test.c:8 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [64])
+        (nil)))
+(insn 21 20 22 2 (set (reg:DI 0 ax [65])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [0 B+0 S8 A64])) test.c:9 87 {*movdi_internal_rex64}
+     (nil))
+(insn 22 21 23 2 (set (reg:DI 5 di)
+        (reg:DI 0 ax [65])) test.c:9 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 0 ax [65])
+        (nil)))
+(call_insn 23 22 24 2 (call (mem:QI (symbol_ref:DI ("free") [flags 0x3]  <function_decl 0x7f4483436d00 free>) [0 __builtin_free S1 A8])
+        (const_int 0 [0])) test.c:9 665 {*call}
+     (expr_list:REG_DEAD (reg:DI 5 di)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 5 di))
+        (nil)))
+(insn 24 23 25 2 (set (reg:DI 0 ax [66])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [0 D+0 S8 A64])) test.c:10 87 {*movdi_internal_rex64}
+     (nil))
+(insn 25 24 26 2 (set (reg:DI 5 di)
+        (reg:DI 0 ax [66])) test.c:10 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 0 ax [66])
+        (nil)))
+(call_insn 26 25 27 2 (call (mem:QI (symbol_ref:DI ("free") [flags 0x3]  <function_decl 0x7f4483436d00 free>) [0 __builtin_free S1 A8])
+        (const_int 0 [0])) test.c:10 665 {*call}
+     (expr_list:REG_DEAD (reg:DI 5 di)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 5 di))
+        (nil)))
+(insn 27 26 28 2 (set (reg:DI 0 ax [67])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -16 [0xfffffffffffffff0])) [0 C+0 S8 A64])) test.c:11 87 {*movdi_internal_rex64}
+     (nil))
+(insn 28 27 29 2 (set (reg:DI 5 di)
+        (reg:DI 0 ax [67])) test.c:11 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 0 ax [67])
+        (nil)))
+(call_insn 29 28 30 2 (call (mem:QI (symbol_ref:DI ("free") [flags 0x3]  <function_decl 0x7f4483436d00 free>) [0 __builtin_free S1 A8])
+        (const_int 0 [0])) test.c:11 665 {*call}
+     (expr_list:REG_DEAD (reg:DI 5 di)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 5 di))
+        (nil)))
+(insn 30 29 31 2 (set (reg:DI 4 si)
+        (const_int 70 [0x46])) test.c:13 87 {*movdi_internal_rex64}
+     (nil))
+(insn 31 30 32 2 (set (reg:DI 5 di)
+        (const_int 2 [0x2])) test.c:13 87 {*movdi_internal_rex64}
+     (nil))
+(call_insn 32 31 34 2 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("calloc") [flags 0x3]  <function_decl 0x7f4483430800 calloc>) [0 __builtin_calloc S1 A8])
+            (const_int 0 [0]))) test.c:13 672 {*call_value}
+     (expr_list:REG_DEAD (reg:DI 5 di)
+        (expr_list:REG_DEAD (reg:DI 4 si)
+            (expr_list:REG_EH_REGION (const_int 0 [0])
+                (nil))))
+    (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 5 di))
+        (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 4 si))
+            (nil))))
+(insn 34 32 35 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -32 [0xffffffffffffffe0])) [0 A+0 S8 A64])
+        (reg/f:DI 0 ax [68])) test.c:13 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg/f:DI 0 ax [68])
+        (nil)))
+(insn 35 34 36 2 (set (reg:DI 0 ax [69])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -32 [0xffffffffffffffe0])) [0 A+0 S8 A64])) test.c:14 87 {*movdi_internal_rex64}
+     (nil))
+(insn 36 35 37 2 (set (reg:DI 4 si)
+        (const_int 150 [0x96])) test.c:14 87 {*movdi_internal_rex64}
+     (nil))
+(insn 37 36 38 2 (set (reg:DI 5 di)
+        (reg:DI 0 ax [69])) test.c:14 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 0 ax [69])
+        (nil)))
+(call_insn 38 37 40 2 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("realloc") [flags 0x3]  <function_decl 0x7f4483441400 realloc>) [0 __builtin_realloc S1 A8])
+            (const_int 0 [0]))) test.c:14 672 {*call_value}
+     (expr_list:REG_DEAD (reg:DI 5 di)
+        (expr_list:REG_DEAD (reg:DI 4 si)
+            (expr_list:REG_EH_REGION (const_int 0 [0])
+                (nil))))
+    (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 5 di))
+        (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 4 si))
+            (nil))))
+(insn 40 38 41 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [0 B+0 S8 A64])
+        (reg:DI 0 ax [70])) test.c:14 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 0 ax [70])
+        (nil)))
+(insn 41 40 42 2 (set (reg:DI 0 ax [71])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -32 [0xffffffffffffffe0])) [0 A+0 S8 A64])) test.c:15 87 {*movdi_internal_rex64}
+     (nil))
+(insn 42 41 43 2 (set (reg:DI 5 di)
+        (reg:DI 0 ax [71])) test.c:15 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 0 ax [71])
+        (nil)))
+(call_insn 43 42 44 2 (call (mem:QI (symbol_ref:DI ("free") [flags 0x3]  <function_decl 0x7f4483436d00 free>) [0 __builtin_free S1 A8])
+        (const_int 0 [0])) test.c:15 665 {*call}
+     (expr_list:REG_DEAD (reg:DI 5 di)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 5 di))
+        (nil)))
+(insn 44 43 45 2 (set (reg:DI 0 ax [72])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [0 B+0 S8 A64])) test.c:16 87 {*movdi_internal_rex64}
+     (nil))
+(insn 45 44 46 2 (set (reg:DI 5 di)
+        (reg:DI 0 ax [72])) test.c:16 87 {*movdi_internal_rex64}
+     (expr_list:REG_DEAD (reg:DI 0 ax [72])
+        (nil)))
+(call_insn 46 45 47 2 (call (mem:QI (symbol_ref:DI ("free") [flags 0x3]  <function_decl 0x7f4483436d00 free>) [0 __builtin_free S1 A8])
+        (const_int 0 [0])) test.c:16 665 {*call}
+     (expr_list:REG_DEAD (reg:DI 5 di)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 5 di))
+        (nil)))
+(insn 47 46 57 2 (set (reg:SI 0 ax [orig:59 D.3347 ] [59])
+        (const_int 0 [0])) test.c:18 89 {*movsi_internal}
+     (nil))
+(insn 57 47 64 2 (use (reg/i:SI 0 ax)) test.c:19 -1
+     (nil))
+(note 64 57 65 2 NOTE_INSN_EPILOGUE_BEG)
+(insn/f 65 64 66 2 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 6 bp)
+                    (const_int 8 [0x8])))
+            (set (reg/f:DI 6 bp)
+                (mem:DI (reg/f:DI 6 bp) [0 S8 A8]))
+            (clobber (mem:BLK (scratch) [0 A8]))
+        ]) test.c:19 -1
+     (expr_list:REG_CFA_DEF_CFA (plus:DI (reg/f:DI 7 sp)
+            (const_int 8 [0x8]))
+        (nil)))
+(jump_insn 66 65 67 2 (simple_return) test.c:19 -1
+     (nil)
+ -> simple_return)
+(barrier 67 66 0)
